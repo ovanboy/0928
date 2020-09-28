@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@import "3.0/base.scss";
+
+
+
+.banner {
+    position: relative;
+    height: 311px;
+    .banner-bg {
+        position: absolute;
+        top: -748px;
+        left: 50%;
+        margin-left: -530px;
+        width: 1060px;
+        height: 1060px;
+        background-image: linear-gradient(45deg, rgba(71,179,255,1) 0%, rgba(47,112,255,1) 50%);
+        border-radius: 530px;
+        overflow: hidden;
+        .round-a {
+            position: absolute;
+            left: 550px;
+            top: 860px;
+            width: 288px;
+            height: 288px;
+            background-image: linear-gradient(55deg, rgba(87,182,255,0) 15%, rgba(143,180,255,.32) 90%);
+            border-radius: 144px;
+        }
+        .round-b {
+            position: absolute;
+            left: 384px;
+            top: 702px;
+            width: 288px;
+            height: 288px;
+            background-image: linear-gradient(33deg, rgba(87,182,255,0) 15%, rgba(143,162,255,.32) 100%);
+            border-radius: 144px;
+        }
+        .round-c {
+            position: absolute;
+            left: 213px;
+            top: 550px;
+            width: 296px;
+            height: 296px;
+            background-image: linear-gradient(33deg, rgba(41,129,255,1) 15%, rgba(87,182,255,0) 100%);
+            border-radius: 149px;
+        }
+    }
+}
+
+
+
+
+
+
+

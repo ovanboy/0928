@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+$font: "Microsoft Yahei", Tahoma, Arial, sans-serif !default;
+$pageBgColor: #FFFFFF !default;
+
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+    &:before {
+        box-sizing: border-box;
+    }
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+:not(input, textarea) {
+    user-select: none;
+}
+
+html {
+    height: 100%;
+    cursor: pointer;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    cursor: pointer; //for ios click bug
+    font-family: $font;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #333;
+    background-color: $pageBgColor;
+}
+
+input[type=text] {
+    font-family: $font;
+}
+input[type=tel] {
+    font-family: $font;
+}
+input[type=number] {
+    font-family: $font;
+}
+button {
+    font-family: $font;
+}

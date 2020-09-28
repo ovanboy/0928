@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+.#{$namespace}layer-wrapper {
+    position: fixed;
+    z-index: 1000;
+    top: 40px;
+    left: 10px;
+    right: 10px;
+    bottom: 60px;
+    opacity: 0;
+    transition: opacity .2s ease 0s;
+    &.closed {
+        z-index: -100;
+    }
+    &.opened {
+        opacity: 1;
+        transition: opacity .3s ease-in 0s;
+    }
+    &.no-button {
+        bottom: -20px;
+        .#{$namespace}layer-close-btn {
+            display: none;
+        }
+    }
+    &.no-padding {
+        .#{$namespace}layer {
+            background-color: transparent;
+            border-radius: 0;
+        }
+        .#{$namespace}layer-content-wrapper {
+            top: 0;
+            bottom: 0;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,.1);
+
+            // chrome bug 
+            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+        }
+        .#{$namespace}layer-content {
+            padding: 0;
+        }
+        .iScrollVerticalScrollbar {
+            bottom: 10px;
+            top: 10px;
+        }
+    }
+}
+.#{$namespace}layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 360px;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate3d(-50%,-50%, 0);
+    margin-top: -30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.#{$namespace}layer-content-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    overflow: hidden;
+}
+.#{$namespace}layer-content {
+    padding: 0 10px;
+    min-height: 100%;
+}
+.#{$namespace}layer-close-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -70px;
+    margin-left: -22px;
+    width: 45px;
+    height: 45px;
+    background-image: url("/style/_asset/image/ui/layer/close-btn@2x.png");
+    background-size: 45px auto;
+    background-color: transparent;
+    border-width: 0;
+}
+
+// 滚动条样式修正
+.#{$namespace}layer {
+    .iScrollVerticalScrollbar {
+        position: absolute;
+        z-index: 1001;
+        width: 3px;
+        bottom: 0;
+        top: 0;
+        right: 5px;
+        border-radius: 3px;
+        overflow: hidden;
+        .iScrollIndicator {
+            position: absolute;
+            width: 3px;
+            background: rgba(0,0,0,.4);
+            border-radius: 3px;
+        }
+    }
+    .iScrollHorizontalScrollbar {}
+    .iScrollBothScrollbars {}
+}

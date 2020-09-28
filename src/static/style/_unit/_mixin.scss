@@ -1,0 +1,157 @@
+@charset "utf-8";
+@mixin clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin single-line-text() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin centerV {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin centerH {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// 1像素边框
+@mixin border-1px($color) {
+    position: relative;
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+    }
+}
+
+@mixin border-single($dir, $color:$color-border) {
+    border-#{$dir}: 1px solid $color;
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        position: relative;
+        border: none;
+        &::after {
+            content: '';
+            position: absolute;
+            background: $color;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            @if $dir==top {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                -webkit-transform: scaleY(0.5);
+                transform: scaleY(0.5);
+            }
+            @if $dir==bottom {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                -webkit-transform: scaleY(0.5);
+                transform: scaleY(0.5);
+            }
+            @if $dir==left {
+                left: 0;
+                bottom: 0;
+                width: 1px;
+                height: 100%;
+                -webkit-transform: scaleX(0.5);
+                transform: scaleX(0.5);
+            }
+            @if $dir==right {
+                right: 0;
+                bottom: 0;
+                width: 1px;
+                height: 100%;
+                -webkit-transform: scaleX(0.5);
+                transform: scaleX(0.5);
+            }
+        }
+    }
+}
+
+@mixin border-direction($dir, $color:$color-border) {
+    @if ($dir==tb) {
+        border-top: 1px solid $color;
+        border-bottom: 1px solid $color;
+    }
+    @if $dir==lr {
+        border-left: 1px solid $color-border;
+        border-right: 1px solid $color-border;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        position: relative;
+        border: none;
+        &::after,
+        &::before {
+            content: " ";
+            position: absolute;
+            background: $color;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            @if ($dir==tb) {
+                left: 0;
+                width: 100%;
+                height: 1px;
+                -webkit-transform: scaleY(0.5);
+                transform: scaleY(0.5);
+            }
+            @if $dir==lr {
+                top: 0;
+                width: 1px;
+                height: 100%;
+                -webkit-transform: scaleX(0.5);
+                transform: scaleX(0.5);
+            }
+        }
+        @if $dir==tb {
+            &::after {
+                top: 0;
+            }
+            &:before {
+                bottom: 0;
+            }
+        }
+        @if $dir==lr {
+            &::after {
+                left: 0;
+            }
+            &:before {
+                right: 0;
+            }
+        }
+    }
+}
+
+// 单行超出显示省略号
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

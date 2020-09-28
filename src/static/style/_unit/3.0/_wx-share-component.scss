@@ -1,0 +1,43 @@
+@charset "utf-8";
+.wx-share-layer {
+  background: #FFF;
+  box-shadow: 0 -4px 8px 0 rgba(206,210,217,0.4);
+  border-radius: 8px 8px 0px 0px;
+  height: 171px;
+  .ui-pop-layer-action-btn {
+    display: none;
+  }
+  .ui-pop-layer-header {
+    padding: 24px 0px;
+    height: 68px;
+    .ui-pop-layer-title {
+      font-size: 14px;
+      color: #37414E;
+      line-height: 20px;
+    }
+  }
+  .ui-pop-layer-content {
+    top: 68px;
+    text-align: center;
+    .share-btn-bar {
+      width: 180px;
+      margin: 0 auto;
+      .share-btn{
+        width: 54px;
+        padding-top: 62px;
+        display: inline-block;
+        white-space: nowrap;
+        background-size: 54px 54px;
+        background-position:  center top;
+        background-repeat: no-repeat;
+        &:first-child {
+          margin-right: 72px;
+          background-image: url("/style/_asset/image/ui/3.0/share-app.png");
+        }
+        &:last-child {
+          background-image: url("/style/_asset/image/ui/3.0/share-timeline.png");
+        }
+      }
+    }
+  }
+}

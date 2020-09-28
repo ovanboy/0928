@@ -1,0 +1,156 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '第二轮 未开始'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zzs/round-2-home.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .round-home   
+            img.round-logo(src=`${_static('data/image/zzs/round-2.png')}`)
+            img.round-home-title(src=`${_static('data/image/zzs/home-title.png')}`)
+            |<!--
+            .situation
+                .situation-head
+                    span 第1轮战况
+                .situation-title 结果统计中，将于10月10日开奖
+                .situation-subtitle 12号开放第二轮选奖，消费持续累积中哦
+                .situation-btn 查看开奖结果
+                .situation-btn 确认邮寄地址
+            .situation
+                .situation-head
+                    span 第1轮战况
+                .situation-title 很遗憾，第一轮未能获奖
+                .situation-subtitle 快选奖，第一轮消费可累积到第二轮哦！
+                .situation-btn 查看开奖结果
+            |-->
+            .situation
+                .situation-head
+                    span 第1轮战况
+                .situation-title 恭喜您获得索尼PS4 Pro套装
+                .situation-subtitle 请于*号前确认邮寄地址
+                .situation-btn.check-award 查看开奖结果
+                .situation-btn.address 确认邮寄地址
+            a.rule 活动规则
+            .dateline
+                .dateline-bar.unactive
+                    .date-left 9.9
+                    .dateline-progress 
+                    .date-right 10.6
+                    .text 第一轮 开奖中
+                .dateline-bar.active
+                    .date-left 9.9
+                    .dateline-progress 
+                        .dateline-progress-inner(rate="40")
+                            .rest-day 剩余22天
+                    .date-right 10.6
+            .award
+                .award-title 
+                    span 点击奖品查看详情
+                .award-list
+                    .award-item(awardid=1)
+                        section
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me 选我
+                    .award-item(awardid=2)
+                        section
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me 8号开选
+                    .award-item(awardid=3)
+                        section.got
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me(disabled) 选我
+
+            .info
+                .info-item
+                    i.icon-select
+                    span 8号开放选奖
+                .info-item
+                    i.icon-card
+                    span 每周刷<b>5笔¥168</b><span class="gray"> (当前消费都将计入统计)</span>
+                .info-item
+                    i.icon-jifen
+                    span 刷满<b>任1周</b>瓜分<b>8亿积分</b>，先达先得
+                .info-item
+                    i.icon-gift
+                    span 刷满<b>任2周</b>，根据消费排名赢所选奖品
+    each index in [1,2,3]
+        script(type="text/template",id='award-template-'+index)
+            .award-detail
+                .award-detail-title 索尼PS4 Pro家用套装#{index}
+                .award-detail-subtitle 刷满2周且消费排名前1000可获得
+                img()
+                p 索尼官方直营 Sony PlayStation 4 PS4 slim 主机国行家用游戏机
+    script(type="text/template",id='award-list-layer-template')
+        .award-list-layer-content
+            h3 {{{underTwoWeeksDetail}}}
+            ul 
+                |{{#prizeList}}
+                li 
+                    .up
+                        .aname {{prizeNm}}
+                        .acount 共{{actStore}}份
+                    .down
+                        span 最低累积消费额:{{pntConsumeCnt}}元
+                        |{{#isSelect}}
+                        i.selected 已选
+                        |{{/isSelect}}
+                |{{/prizeList}}
+    #address-popup-template(style="display:none")
+        .address-popup
+            .cell-panel
+                .cell-item
+                    .cell-item--label 姓名
+                    .cell-item--content.username 
+                .cell-item
+                    .cell-item--label 手机号
+                    .cell-item--content.mobile 
+                .cell-item
+                    .cell-item--label 收货地址
+                    .cell-item--content
+                        span.province
+                        span.city
+                        span.area
+                        span.addr
+
+            .plt15  
+                .ui-btn.bigger.primary.block.edit-address 更改地址
+    #address-popup-edit-template(style="display:none")
+        .address-popup-panel    
+            .cell-panel
+                .cell-item
+                    .cell-item--label 姓名
+                    .cell-item--content.username(style="color:#888") 
+                .cell-item
+                    .cell-item--label 手机号
+                    .cell-item--content
+                        .input-box
+                            input.mobile-input(type="number",placeholder="请输入12位手机号码",value="45646")
+                            .clear-btn.reset
+                .cell-item.cityselect
+                    .cell-item--label 省市区
+                    .cell-item--content 
+                        span.province
+                        span.city
+                        span.area
+                    .cell-icon.arrow-right
+                .cell-item
+                    .cell-item--label 收货地址
+                    .cell-item--content 
+                        textarea.addr-textarea(placeholder="请输入详细地址",cols="30" rows="5",maxlength="138") 
+                    .cell-icon.cell-icon-clear.reset
+            .plt15  
+                button.ui-btn.bigger.primary.block.edit-submit-btn 确认修改
+
+
+
+
+
+
+append script
+    script(src=`${_static('script/entry/zzs/region-data.js')}`)
+    script(src=`${_static('script/entry/zzs/round-2-home.js')}`)

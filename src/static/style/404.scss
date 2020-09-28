@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@import "variable.scss";
+@import "mixin.scss";
+
+
+body {
+	background-color: #222a4b;
+}
+.errer-404-tips {
+	margin:200px 0 10px;
+	text-align: center;
+	a {
+		color:#ffffff;
+	}
+}

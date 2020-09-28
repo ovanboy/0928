@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+
+$namespace: null !default;
+
+.#{$namespace}layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 360px;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate3d(-50%,-50%, 0);
+    background-color: transparent;
+    border-radius: 0;
+    opacity: 0;
+    transition: opacity .24s ease 0s;
+    &.closed {
+        display: none;
+    }
+    &.opened {
+        opacity: 1;
+        transition: opacity .3s ease-in 0s;
+    }
+    .#{$namespace}layer-content-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 10px;
+        // chrome bug 
+        -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+        &>.iScrollVerticalScrollbar {
+            top: 10px;
+            bottom: 10px;
+        }
+    }
+    .#{$namespace}layer-close-btn {
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        background: url("/style/_asset/image/ui/3.0/dialog/icon-layer-close.png") no-repeat;
+        background-size: 18px auto;
+        background-color: transparent;
+        border-width: 0;
+    }
+
+    .iScrollVerticalScrollbar {
+        position: absolute;
+        z-index: 1001;
+        width: 3px;
+        bottom: 0;
+        top: 0;
+        right: 5px;
+        border-radius: 3px;
+        overflow: hidden;
+        .iScrollIndicator {
+            position: absolute;
+            width: 3px;
+            background: rgba(0,0,0,.4);
+            border-radius: 3px;
+        }
+    }
+    .iScrollHorizontalScrollbar {}
+    .iScrollBothScrollbars {}
+}

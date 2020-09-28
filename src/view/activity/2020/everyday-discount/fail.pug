@@ -1,0 +1,15 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '天天95折'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/everyday-discount/fail.scss')}`)
+
+block pageContent
+    main.page-content
+        .main-background
+        .title 额，你好像不是它们的客人
+        .message 可以去其他地方看看哟～
+        a.button(href="#") 返回
+append script

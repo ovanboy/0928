@@ -1,0 +1,17 @@
+extends /_unit/base.pug
+
+
+append data
+    -   var pageTitle = '您请求的页面不存在'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/404.scss')}`)
+
+
+block pageContent
+    main.page-content
+        p.errer-404-tips
+            a(href='/') 返回首页
+
+append script
+    script(src=`${_static('script/entry/404.js')}`)

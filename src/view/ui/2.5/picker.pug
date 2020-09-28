@@ -1,0 +1,22 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '选择组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/picker.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#select-btn.ui-btn.bigger.primary.block 普通选择
+            button#casecade-select-btn.ui-btn.bigger.primary.block 级联选择 
+        .ui-panel.content-btn-panel.bigger
+            button#datetime-select-btn.ui-btn.bigger.primary.block 日期时间选择
+            button#date-select-btn.ui-btn.bigger.primary.block 日期选择
+            button#month-select-btn.ui-btn.bigger.primary.block 月份选择
+            button#time-select-btn.ui-btn.bigger.primary.block 时间选择
+            button#hour-select-btn.ui-btn.bigger.primary.block 小时选择
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/picker.js')}`)

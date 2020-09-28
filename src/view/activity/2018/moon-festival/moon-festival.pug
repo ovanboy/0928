@@ -1,0 +1,53 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '我是标题'
+
+append style
+    meta(name='description' content='hello everyonne')
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2018/moon-festival/moon-festival.scss')}`)
+
+block pageHeader
+
+block pageContent
+    img(src=`${_static('style/_asset/image/activity/2018/moon-festival/get-bg.png')}`).hide
+    main.page-content.verticalCenter
+        .wishesAndSignatureCon
+            .wishesBg
+            .signature.verticalCenter
+                div.nameSpan
+                span 祝您
+                //span.line
+        .mainContentCon
+            .tipsAndRabbitCon
+                .tipsCon
+                    .presentBg
+                    .msg.hide 买单吧新用户立享38元大礼包
+                        | （内含10元话费）
+                    .msg 特送上38元买单吧新户大礼包
+                        | （内含10元话费）
+                .rabbitBg
+            .transferCon
+                button.btn.hide#transferBtn1 传递祝福给亲友
+                button.btn.hide#transferBtn2 传递祝福
+                button.btn.hide#receiveBtn 立即领取
+        .transferWishesFormCon.sendCon.verticalCenter.hide
+            .titleBg.sendBg
+            .cuStart 你的名字
+            input.tranferNameField
+            button.sendAndReceive.sendBtn 送祝福
+            .tipsCon.verticalCenter
+                .msg 新户立享38元大礼包，内含10元话费，仅限建行信用卡绑卡用户
+                .presentBg
+        .transferWishesFormCon.transferCon.verticalCenter.hide
+            .titleBg.receiveBg
+            input(placeholder='请输入你的11位电话号码' type='tel' maxlength='11').telNOField
+            .errorMsg.techniqueHide 请输入正确的手机号
+            button.sendAndReceive.receiveImd 立即领取
+            .tipsCon.verticalCenter
+                .msg 新户立享38元大礼包，内含10元话费，仅限建行信用卡绑卡用户
+                .presentBg
+        .guideSharePanel.hide
+
+append script
+    script(src=`${_static('script/entry/activity/2018/moon-festival/moon-festival.js')}`)

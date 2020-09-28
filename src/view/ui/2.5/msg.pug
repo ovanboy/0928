@@ -1,0 +1,23 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '消息组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/msg.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#demo-btn.ui-btn.bigger.primary.block 消息示例
+        .ui-panel.content-btn-panel
+            button#info-btn.ui-btn.bigger.primary.block 普通消息
+            button#warn-btn.ui-btn.bigger.primary.block 警告消息
+            button#success-btn.ui-btn.bigger.primary.block 成功消息
+            button#error-btn.ui-btn.bigger.primary.block 错误消息
+        .ui-panel.content-btn-panel
+            button#mask-btn.ui-btn.bigger.primary.block 带遮罩消息
+            button#custom-btn.ui-btn.bigger.primary.block 自定持续时间
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/msg.js')}`)

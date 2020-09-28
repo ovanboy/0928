@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+$font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif !default;
+$text-color: #333333 !default;
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+    &:before {
+		box-sizing: border-box;
+	}
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+:not(input,textarea) { 
+	-webkit-user-select: none;
+}
+
+html {
+	height: 100%;
+	cursor: pointer;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	cursor: pointer;
+	font-family: $font-family;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: $text-color;
+	background-color: #F4F6F8;
+}
+
+input[type=text] {
+	font-family: $font-family;
+}
+input[type=tel] {
+	font-family: $font-family;
+}
+input[type=number] {
+	font-family: $font-family;
+}
+
+// 全局 1像素边框
+// @media (-webkit-min-device-pixel-ratio: 1.5),(-min-device-pixel-radio: 1.5) {
+// 	.border-1px:after {
+// 		-webkit-transform: scaleY(0.7);
+// 		transform: scaleY(0.7);
+// 	}
+// }
+
+// @media (-webkit-min-device-pixel-ratio: 2),(-min-device-pixel-radio: 2) {
+// 	.border-1px:after {
+// 		-webkit-transform: scaleY(0.5);
+// 		transform: scaleY(0.5);
+// 	}
+// }

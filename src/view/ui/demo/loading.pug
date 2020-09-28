@@ -1,0 +1,19 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = 'loading示例'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/loading.scss')}`)
+
+
+block pageContent
+    main.page-content
+    .loading
+        .inner-wrapper
+            .inner
+
+
+block script

@@ -1,0 +1,113 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '天天95折'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/everyday-discount/index.scss')}`)
+
+block pageContent
+    main.page-content
+        .main-background
+            //- .title 春风十里不如你
+            .time 活动时间：2020.3.20-2020.4.30
+            a(href="#")
+                .rule 活动细则
+                    .inner 
+        .main-countent
+            .content-box
+                .notice 本月【
+                    span 云闪付
+                    | 】立减额度已全部享受
+                .discount-content
+                    .discount-number
+                        .text 今日可享立减
+                        //- .unbind 绑卡后查看
+                        //- .already-discount
+                        //-     span.yuan ￥
+                        //-     span.number 30.00
+                        .can-discount
+                            span.yuan ￥
+                            span.number 5.00
+                .remain-number
+                    .left-content 
+                        .today-remain 今日剩余名额
+                        .deadline (截至09:29:03)
+                    .right-content
+                        span 1
+                        span 2
+                        span 3
+                        span 4
+                        span 5
+                        span 6
+                .button-bind.button 立即绑定
+                    div 支付宝/微信/京东/美团/苏宁/云闪付
+                    .inner
+                .button-discount.button.btn-normal 立即消费享折扣
+                    .inner
+                .button-bind-card.button.btn-normal 立即绑卡
+                    .inner
+                .button-thursday
+                    .button-receive.button.btn-normal 立即领权益
+                        .inner
+                    .button-bind-yunsanfu.button.btn-normal-white 绑定云闪付
+                        .inner
+                .tomorrow-discount 明日优惠支付方式：【
+                    span 云闪付
+                    | 】
+            .content-box-bottom 
+                .activity-title 活动说明
+                .activity-info 3月20日-4月30日，兴业银行信用卡境内消费每天从早上9点至晚上24点在使用指定支付渠道满足周一至周四单笔100元，周五至周末单笔满50元可以立减5%，每人每天限1笔，每天数量有限，先到先得，用完为止，买单吧渠道不含扫码支付。
+                | 活动期间每个支付渠道每月立减额度25元（周五和周六买单吧支付渠道分别拥有每月立减额度25元），详见下表
+                //- .activity-info 活动期间，每周四在买单吧APP领券中心领“银联云闪付周四消费达标返5%通用刷卡金”的权益，领券客户当日银联云闪付第一笔单笔实付金额达到100元及以上的扫码交易，可获赠当笔达标消费金额5%的通用刷卡金返还，返还刷卡金两周后导入。刷卡金自导入日起30天有效，可抵扣有效期内任意消费。每人每天仅限第一笔达标消费享受刷卡金返还，月最高返25元。每周四共5万个权益，先到先得。
+                table.table
+                    tr
+                        th.table-background 
+                        th.table-background 优惠方式
+                        th.table-background 本月立减额度(元)
+                        th.table-background 本月已用立减额度(元)
+                    tr
+                        td.table-background 周一
+                        td 支付宝
+                        td.orange 5.5
+                        td 0.00
+                    tr
+                        td.table-background 周二
+                        td 微信
+                        td.orange 5.5
+                        td 1.11
+                    tr
+                        td.table-background 周三
+                        td 京东/苏宁
+                        td.orange 5.5
+                        td 2.22
+                    tr
+                        td.table-background 周四
+                        td 银联云闪付
+                        td.orange 5.5
+                        td 3.33
+                    tr
+                        td.table-background 周五
+                        td 买单吧
+                        td(colspan="2") 领券消费返5%刷卡金
+                    tr
+                        td.table-background 周六
+                        td 买单吧
+                        td.orange 5.5
+                        td 5.55
+                    tr
+                        td.table-background 周日
+                        td 美团
+                        td.orange 5.5
+                        td 6.66
+            .banner-box
+                a(href="#")
+                    img.banner(src=`${_static('data/image/activity/2020/everyday-discount/banner2.png')}`)
+                a(href="#")
+                    img.banner(src=`${_static('data/image/activity/2020/everyday-discount/banner3.png')}`)
+                a(href="#")    
+                    img.banner(src=`${_static('data/image/activity/2020/everyday-discount/banner4.png')}`)
+                a(href="#")
+                    img.banner(src=`${_static('data/image/activity/2020/everyday-discount/banner1.png')}`)
+append script
+    script(src=`${_static('script/entry/activity/2020/everyday-discount/index.js')}`)

@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+@import "3.0/base.scss";
+
+
+
+
+.form-item {
+    $labelWidth: 95px;
+    $itemHeight: 50px;
+    $lineColor: #e8e8e8;
+    position: relative;
+    height: $itemHeight;
+    // padding: 0;
+    line-height: $itemHeight;
+    .inner {
+        position: relative;
+        height: 100%;
+        padding: 0 0 0 $labelWidth;
+    }
+    .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $labelWidth;
+        height: 100%;
+        padding: 0 5px 0 15px;
+        font-size: 15px;
+        color: #444;
+        @include ellipsis();
+    }
+    .cont {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        // bottom: 0;
+        left: 15px;
+        height: 1px;
+        background-color: $lineColor;
+        transform: scaleY(.5);
+        transform-origin: center top;
+    }
+    &:first-child {
+        &:after {
+            display: none;
+        }
+    }
+    &.error {
+        .inner{
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 200%;
+                // background: url("/style/_asset/image/ui/3.0/form/error.png") no-repeat right -1px;
+                background: url("/style/_asset/image/card/register/credit-card/error.png") no-repeat right -1px;
+                background-size: 38px auto;
+                border: 1px solid #FF4158; //#FF4D29;
+                transform: scale(.5);
+                transform-origin: left top;
+            }
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &.action {
+        &:active {
+            background-color: #f8f8f8;
+        }
+        .form-element {
+            &:active {
+                background-color: transparent;
+            }
+        }
+    }
+    &.has-right-btn {
+        padding-right: 105px;
+        .btn-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 105px;
+            height: 100%;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 1px;
+                background-color: $lineColor;
+                transform: scaleX(.5);
+                transform-origin: left center;
+            }
+        }
+        .btn {
+            display: block;
+            position: relative;
+            margin: 0;
+            width: 100%;
+            height: $itemHeight;
+            padding: 13px 15px;
+            background-color: #fff;
+            background-clip: padding-box;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 0;
+            border-radius: 0;
+            // transition: all .2s linear 0s;
+            text-align: center;
+            text-decoration: none;
+            line-height: $itemHeight - 2 * 13px;// 18px;
+            color: #4586FF;
+            font-size: 15px;
+            font-weight: normal;
+            @include ellipsis();
+            &:active {
+                background-color: #f8f8f8;
+            }
+            &.disabled {
+                background-color: #fff;
+                color: #888;
+            }
+        }
+    }
+}
+
+
+
+.form-item {
+    .cont {
+        .cont-inner {
+            display: block;
+            height: 100%;
+            padding: 0 15px;
+            @include ellipsis();
+        }
+        .radio-item {
+            margin-right: 10px;
+        }
+        .ui-radio {
+            margin-right: 5px;
+        }
+    }
+}
+

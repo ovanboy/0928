@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+@import "variable.scss";
+@import "mixin.scss";
+
+
+.iScrollVerticalScrollbar {
+    position: absolute;
+    z-index: 1001;
+    width: 3px;
+    bottom: 3px;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+    .iScrollIndicator {
+        position: absolute;
+        width: 3px;
+        background: rgba(0,0,0,.4);
+        border-radius: 3px;
+    }
+}
+.iScrollHorizontalScrollbar {}
+.iScrollBothScrollbars {}
+
+
+.catalog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0 0 0 44px;
+	background-color: #fff;
+	overflow: hidden;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		position: relative;
+		margin: -1px 0 0;
+		padding: 0;
+		height: 45px;
+		padding: 0;
+		line-height: 44px;
+		text-decoration: none;
+		color: #555;
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 15px;
+			height: 1px;
+			background-color: #e8e8e8;
+			transform: scaleY(.5);
+			transform-origin: center top;
+		}
+		&:first-child:before {
+			display: none;
+		}
+	}
+	.no-data {
+		padding: 150px 15px;
+		line-height: 28px;
+		font-size: 15px;
+		color: #999;
+		text-align: center;
+	}
+}
+
+
+
+.page-dir {
+	display: block;
+	height: 45px;
+	padding: 1px 15px 0;
+	line-height: 44px;
+	text-decoration: none;
+	color: #555;
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		width: 14px;
+		height: 16px;
+		background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 14 16" width="14" height="16" aria-hidden="true"><path fill="rgba(0,0,0,.4)" fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>');
+		background-repeat: no-repeat;
+		background-size: 14px auto;
+	}
+	&:active {
+		background-color: #f8f8f8;
+	}
+}
+
+.page-link {
+	display: block;
+	height: 45px;
+	padding: 1px 15px 0;
+	line-height: 44px;
+	text-decoration: none;
+	color: #4e73ff;
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		width: 14px;
+		height: 16px;
+		background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 12 16" width="12" height="16" aria-hidden="true"><path fill="rgba(0,0,0,.4)" fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>');
+		background-repeat: no-repeat;
+		background-size: 12px auto;
+		background-position: 1px 0;
+	}
+	&:active {
+		background-color: #f8f8f8;
+	}
+}
+
+.nav {
+	$w: 44px;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: $w;
+	height: 100%;
+	background-color: #f5f5f5;
+	text-decoration: none;
+	color: #555;
+	writing-mode: vertical-rl;
+	line-height: $w;
+	.nav-item {
+		display: inline-block;
+		width: 100%;
+		min-height: 60px;
+		max-height: 150px;
+		padding: 10px 0;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		background-image: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.05));
+		color: #555;
+		text-decoration: none;
+		&.root {
+			min-height: $w;
+			padding: 0;
+			height: $w;
+			background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path fill="rgba(0,0,0,.7)" d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"></path></svg>');
+			background-repeat: no-repeat;
+            background-size: 18px auto;
+            background-position: 13px 13px;
+            background-color: rgba(0,0,0,.05);
+		}
+		&:active {
+			background-color: rgba(0,0,0,.2);
+		}
+		&.current {
+			background-color: transparent;
+			color: #bbb;
+			text-shadow: 0px 1px 0 #fff;
+		}
+	}
+}
+
+
+
+

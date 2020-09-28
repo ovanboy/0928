@@ -1,0 +1,80 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '全部奖品'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/shop-everyweek/check-all.scss')}`)
+
+block pageContent
+    main.page-content
+        .titchoose 
+        .listitem
+            .left.item
+                img.pro#pro(src="", alt="")
+            .right.item
+                .name#name -
+                .bottom
+                    .text
+                        p 
+                            span#time -月-日
+                            |前可选
+                        p.num 参考市场价
+                            span#val -
+                            |元
+        .morepro 
+        .list
+        //- .listitem
+        //-     .left.item
+        //-         img.pro(src=`${_static('data/image/activity/2020/shop-everyweek/mypro.png')}`, alt="")
+        //-     .right.item
+        //-         .name 奖品1名称奖品1名称奖品1名称奖品1名称奖品1名奖品1名称奖品1名称奖奖品1名称奖奖品1名称奖奖品1名称奖
+        //-         .bottom
+        //-             p.num 共
+        //-                 span 1000
+        //-                 |元
+        //-             button.change 更换奖品
+        .titrule
+        ul.rule
+            li 
+                .lileft.li 1、
+                .liright.li 每月可选择一个心仪礼品参与排名挑战，每月仅有一次选奖机会，一旦选择无法更改。若不选择礼品，则金砖只能用于幸运矿车抽奖，无法参与排名挑战。
+            li 
+                .lileft.li 2、
+                .liright.li 次月可重新选奖，若未重新选奖则自动默认上月选择的礼品参与排名挑战。
+            li 
+                .lileft.li 3、
+                .liright.li 每个奖品均有效期，如所选奖品已过有效期（含默认选奖），持卡人需重新选择奖品，否则视作未选奖放弃参与金砖排名挑战。
+block other
+    script#result-tpl(type="text/template")
+    
+        | {{#list}}
+        .listitem
+            .left.item
+                img.pro(src='{{image}}', alt="")
+            .right.item
+                .name {{name}}
+                .bottom
+                    .text
+                        p 
+                            span {{time}}
+                            |前可选
+                        p.num 参考市场价
+                            span {{val}}
+                            |元
+                    |{{^hadchanged}}
+                    button.btn.change(name="{{id}}-{{name}}") 更换奖品
+                    |{{/hadchanged}}
+                    |{{#hadchanged}}
+                    button.btn.notchange 下月可换
+                    |{{/hadchanged}}
+        | {{/list}}
+
+append script
+    script.
+        var urlInfo = {
+            // banner数据
+            getMoreListRequestUrl: '/activity/2020/shop-everyweek/getmorelist.json',
+            changeProRequestUrl: '/activity/2020/shop-everyweek/changepro.json'
+            }
+    script(src=`${_static('script/entry/activity/2020/shop-everyweek/check-all.js')}`)

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+
+$namespace: null !default;
+$primaryColor: #4586ff !default;
+$primaryActiveColor: #2F71EB !default;
+
+.#{$namespace}text-link {
+	color: $primaryColor;
+	text-decoration: none;
+	&:active {
+		color: $primaryActiveColor;
+	}
+}

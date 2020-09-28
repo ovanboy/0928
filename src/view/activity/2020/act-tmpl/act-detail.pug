@@ -1,0 +1,17 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/act-tmpl/act-detail.scss')}`)
+
+
+block pageContent
+    main.page-content
+        
+
+
+append script
+    script(src=`${_static('script/entry/activity/2020/act-tmpl/act-detail.js')}`)

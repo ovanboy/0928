@@ -1,0 +1,386 @@
+@charset "utf-8";
+
+$gray-dark: #333;
+
+//主色
+$primary-color: #3e73ff !default;
+$primary-active-color: #335fd4 !default;
+$primary-disabled-color: #e0e0e0 !default;
+
+//信息色
+//success
+$success-color: #71d445 !default;
+$success-active-color: #56bc2c !default;
+$success-disabled-color: #b4e8a0 !default;
+//warning
+$warning-color: #ff8a0c !default;
+$warning-active-color: #e17400 !default;
+$warning-disabled-color: #fec283 !default;
+//danger
+$danger-color: #fb5a5a !default;
+$danger-active-color: #ee4444 !default;
+$danger-disabled-color: #ee9f92 !default;
+
+
+$btn-font-size:15px !default;
+$btn-font-weight: bold !default;
+
+$btn-text-color: #3e73ff !default;
+$btn-background-color: #f6f5fa !default;
+$btn-border-color: #f6f5fa !default;
+$btn-active-text-color: #3e73ff !default;
+$btn-active-background-color: #e7e6eb !default;
+$btn-active-border-color: #e7e6eb !default;
+$btn-disabled-text-color: #c2c2c2 !default;
+$btn-disabled-background-color: #e0e0e0 !default;
+$btn-disabled-border-color: #e0e0e0 !default;
+
+$btn-primary-text-color: #ffffff !default;
+$btn-primary-background-color: $primary-color !default;
+$btn-primary-border-color: $primary-color !default;
+$btn-primary-active-text-color: #ffffff !default;
+$btn-primary-active-background-color: $primary-active-color !default;
+$btn-primary-active-border-color: $primary-active-color !default;
+$btn-primary-disabled-text-color: #c2c2c2 !default;
+$btn-primary-disabled-background-color: $primary-disabled-color !default;
+$btn-primary-disabled-border-color: $primary-disabled-color !default;
+
+$btn-danger-text-color: #ffffff !default;
+$btn-danger-background-color: $danger-color !default;
+$btn-danger-border-color: $danger-color !default;
+$btn-danger-active-text-color: #ffffff !default;
+$btn-danger-active-background-color: $danger-active-color !default;
+$btn-danger-active-border-color: $danger-active-color !default;
+$btn-danger-disabled-text-color: #ffffff !default;
+$btn-danger-disabled-background-color: $danger-disabled-color !default;
+$btn-danger-disabled-border-color: $danger-disabled-color !default;
+
+$btn-warning-text-color: #ffffff !default;
+$btn-warning-background-color: $warning-color !default;
+$btn-warning-border-color: $warning-color !default;
+$btn-warning-active-text-color: #ffffff !default;
+$btn-warning-active-background-color: $warning-active-color !default;
+$btn-warning-active-border-color: $warning-active-color !default;
+$btn-warning-disabled-text-color: #ffffff !default;
+$btn-warning-disabled-background-color: $warning-disabled-color !default;
+$btn-warning-disabled-border-color: $warning-disabled-color !default;
+
+$btn-success-text-color: #ffffff !default;
+$btn-success-background-color: $success-color !default;
+$btn-success-border-color: $success-color !default;
+$btn-success-active-text-color: #ffffff !default;
+$btn-success-active-background-color: $success-active-color !default;
+$btn-success-active-border-color: $success-active-color !default;
+$btn-success-disabled-text-color: #ffffff !default;
+$btn-success-disabled-background-color: $success-disabled-color !default;
+$btn-success-disabled-border-color: $success-disabled-color !default;
+
+
+$btn-orange-background-color: #ff7919;
+$btn-orange-border-color: #ff7919;
+$btn-orange-active-background-color: #f16000;
+$btn-orange-active-border-color: #f16000;
+
+$btn-red-background-color: #ff4158;
+$btn-red-border-color: #ff4158;
+$btn-red-active-background-color: #de2f44;
+$btn-red-active-border-color: #de2f44;
+
+
+.#{$namespace}btn {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin: 0; //For mobile button input[type=button]
+    padding: 12px 14px;
+    background-color: $btn-background-color;
+    background-clip: padding-box;
+    border: 1px solid $btn-border-color;
+    border-radius: 5px;
+    transition: all .2s linear 0s;
+    text-align: center;
+    text-decoration: none;
+    line-height: 18px;
+    color: $btn-text-color;
+    font-size: 15px;
+    font-weight: normal;
+    @include single-line-text();
+    
+    //相对尺寸
+    &.bigger {
+        padding: 15px 14px;
+        font-weight: bold;
+    }
+    &.smaller {
+        font-size: 12px;
+        min-width: 64px;
+        padding: 4px 14px;
+        border-radius: 3px;
+    }
+
+    // 状态
+    &:active,
+    &.active,
+    &:enabled:active,
+    &.active:enabled {
+        background-color: $btn-active-background-color;
+        border-color: $btn-active-border-color;
+    }
+    &:disabled,
+    &.disabled {
+        color: $btn-disabled-text-color;
+        background-color: $btn-disabled-background-color;
+        border-color: $btn-disabled-border-color;
+    }
+
+    &.orange {
+        color: #ffffff;
+        background-color: $btn-orange-background-color;
+        border-color: $btn-orange-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: #ffffff;
+            background-color: $btn-orange-active-background-color;
+            border-color: $btn-orange-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-disabled-text-color;
+            background-color: $btn-disabled-background-color;
+            border-color: $btn-disabled-border-color;
+        }
+    }
+    &.red {
+        color: #ffffff;
+        background-color: $btn-red-background-color;
+        border-color: $btn-red-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: #ffffff;
+            background-color: $btn-red-active-background-color;
+            border-color: $btn-red-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-disabled-text-color;
+            background-color: $btn-disabled-background-color;
+            border-color: $btn-disabled-border-color;
+        }
+    }
+
+    &.primary {
+        color: $btn-primary-text-color;
+        background-color: $btn-primary-background-color;
+        border-color: $btn-primary-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: $btn-primary-active-text-color;
+            background-color: $btn-primary-active-background-color;
+            border-color: $btn-primary-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-primary-disabled-text-color;
+            background-color: $btn-primary-disabled-background-color;
+            border-color: $btn-primary-disabled-border-color;
+        }
+    }
+    &.danger {
+        color: $btn-danger-text-color;
+        background-color: $btn-danger-background-color;
+        border-color: $btn-danger-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: $btn-danger-active-text-color;
+            background-color: $btn-danger-active-background-color;
+            border-color: $btn-danger-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-danger-disabled-text-color;
+            background-color: $btn-danger-disabled-background-color;
+            border-color: $btn-danger-disabled-border-color;
+        }
+    }
+    &.warning {
+        color: $btn-warning-text-color;
+        background-color: $btn-warning-background-color;
+        border-color: $btn-warning-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: $btn-warning-active-text-color;
+            background-color: $btn-warning-active-background-color;
+            border-color: $btn-warning-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-warning-disabled-text-color;
+            background-color: $btn-warning-disabled-background-color;
+            border-color: $btn-warning-disabled-border-color;
+        }
+    }
+    &.success {
+        color: $btn-success-text-color;
+        background-color: $btn-success-background-color;
+        border-color: $btn-success-border-color;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            color: $btn-success-active-text-color;
+            background-color: $btn-success-active-background-color;
+            border-color: $btn-success-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-success-disabled-text-color;
+            background-color: $btn-success-disabled-background-color;
+            border-color: $btn-success-disabled-border-color;
+        }
+    }
+
+    //线框按钮
+    &.outlined {
+        background-color: transparent;
+        &:active,
+        &.active,
+        &:enabled:active,
+        &.active:enabled {
+            background-color: transparent;
+            border-color: $btn-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+            color: $btn-disabled-text-color;
+            background-color: transparent;
+            border-color: $btn-disabled-border-color;
+        }
+        &.orange {
+            color: $btn-orange-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                color: $btn-orange-active-background-color;
+                background-color: transparent;
+                border-color: $btn-orange-active-border-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-disabled-background-color;
+                background-color: transparent;
+                border-color: $btn-disabled-border-color;
+            }
+        }
+        &.red {
+            color: $btn-red-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                color: $btn-red-active-background-color;
+                background-color: transparent;
+                border-color: $btn-red-active-border-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-disabled-background-color;
+                background-color: transparent;
+                border-color: $btn-disabled-border-color;
+            }
+        }
+        &.primary {
+            color: $btn-primary-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                //color: $btn-primary-active-text-color;
+                //background-color: $btn-primary-active-background-color;
+                color: $btn-primary-active-background-color;
+                background-color: transparent;
+                border-color: $btn-primary-active-border-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-primary-disabled-background-color;
+                background-color: transparent;
+                border-color: $btn-primary-disabled-border-color;
+            }
+        }
+        &.danger {
+            color: $btn-danger-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                color: $btn-danger-active-text-color;
+                background-color: $btn-danger-active-background-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-danger-disabled-background-color;
+                background-color: transparent;
+            }
+        }
+        &.warning {
+            color: $btn-warning-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                color: $btn-warning-active-text-color;
+                background-color: $btn-warning-active-background-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-warning-disabled-background-color;
+                background-color: transparent;
+            }
+        }
+        &.success {
+            color: $btn-success-background-color;
+            &:active,
+            &.active,
+            &:enabled:active,
+            &.active:enabled {
+                color: $btn-success-active-text-color;
+                background-color: $btn-success-active-background-color;
+            }
+            &:disabled,
+            &.disabled {
+                color: $btn-success-disabled-background-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    //块级按钮
+    &.block {
+        display: block;
+        width: 100%;
+    }
+
+    //圆边按钮
+    &.round {
+        border-radius: 1000px;
+    }
+
+}
+
+input.#{$namespace}btn[type="button"],
+input.#{$namespace}btn[type="submit"],
+input.#{$namespace}btn[type="reset"], {
+    -webkit-appearance: button;
+}
+

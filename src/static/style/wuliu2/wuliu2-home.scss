@@ -1,0 +1,355 @@
+@charset "utf-8";
+
+@import "variable.scss";
+@import "mixin.scss";
+
+
+.detail{
+    width: 100%;
+    height: 66px;
+    background: gold;
+    background-color: #fff;
+    .detail-Company{
+        overflow: hidden;
+        zoom: 1;
+        height: 33px;
+        line-height: 33px;
+        margin-left: 10px;
+        .Company{
+            float:left;
+            color:#999;
+            font-size: 13px;
+
+        }
+        .content{
+            float: left;
+            font-size: 13px;
+        }
+    }
+    .deil-code{
+        overflow: hidden;
+        zoom: 1;
+        height: 33px;
+        line-height: 33px;
+        margin-left: 10px;
+        .code{
+            float:left;
+            color:#999;
+            font-size: 13px;
+        }
+        .num{
+            float: left;
+            font-size: 13px;
+        }
+        .copy{
+            float: left;
+            width: 33px;
+            height: 17px;
+            font-size: 11px;
+            color:#333;
+            border-radius: 8px;
+            background:  #F4F6F8;
+            line-height:17px;
+            text-align: center;
+            font-size: 11px;
+            margin-left: 8px;
+            margin-top: 8px;
+        }
+    }
+}
+.main{
+    width: 100%;
+    margin-top: 10px;
+    background:  #fff;
+    overflow: hidden;
+  //图片
+    .card-logon{
+        background: url('/style/_asset/image/wuliu2/assets/accet.png') no-repeat 0 0;
+        background-size:100% auto;
+        width: 95%;
+        height: 120px;
+        margin: 10px 2.5% 0 2.5% ;
+    }
+    //物流详情
+    .info{
+        width: 95%;
+        margin-left: 2.5%;
+        list-style: none;
+    //  第一个
+       li{
+           width: 110%;
+           margin-left: -35px;
+           .header{
+               overflow: hidden;
+               zoom: 1;
+               width: 100%;
+               height: 24px;
+               line-height: 24px;
+              
+               .succes{
+                   background: url('/style/_asset/image/wuliu2/assets/change.png') no-repeat 0 0;
+                   background-size: 100% auto;
+                   float: left;
+                   width: 24px;
+                   height: 24px;
+               
+               
+                &:nth-of-type(1) {
+                    background: url('/style/_asset/image/wuliu2/assets/change01.png') no-repeat 0 0;
+                    background-size: 100% auto;
+                    width: 24px;
+                    height: 24px;
+                
+                    }
+                }
+               
+               .signature{
+                   float: left;
+                   height: 24px;
+                   line-height: 24px;
+                   font-size: 16px;
+                   font-weight: 700;
+                   margin-left: 6px;
+               }
+   
+           }
+           .main-info{
+               width: 100%;
+               border-left: 1px solid #999;
+               margin-left: 11px;
+               padding: 5px 0 25px 13px;
+               font-size: 13px;
+               .detail1{
+                span{
+                    color: #4586FF;
+                }
+                   
+               }
+               
+               .detail2 {
+                   span{
+                       color: #4586FF;
+                   }
+               }
+               .timer{
+                   color:#999;
+                   span{
+                       margin-left: 5px;
+                   }
+               }
+           }
+           .step1{
+            width: 100%;
+            height: 24px;
+            line-height: 24px;
+            // background: gold;
+              
+               .dia{
+                width: 8px;
+                height: 8px;
+                background: #ccc;
+                border-radius: 50%;
+                margin-left: 7.5px;
+               }
+            //    span{
+            //     height: 24px;
+            //     line-height: 24px;
+            //     font-size: 16px;
+            //     font-weight: 700;
+            //     margin-left: 6px;
+
+            //    }
+
+
+           
+           }
+          
+       }
+       //第二
+    //    li{
+    //     width: 110%;
+    //     margin-left: -35px;
+    //     .header{
+    //         overflow: hidden;
+    //         zoom: 1;
+    //         width: 100%;
+    //         height: 24px;
+    //         line-height: 24px;
+           
+    //         .succes{
+    //          @each $stautus in send ,road,{
+    //              background: url('/style/_asset/image/wuliu2/assets/#{$stautus}.png') no-repeat 0 0;
+    //          }
+    //      //     &:first-child{
+    //      //         @each $stautus in change01 cash01{
+    //      //             background: url('/style/_asset/image/wuliu2/assets/#{$stautus}.png') no-repeat 0 0;
+
+    //      //     }
+           
+    //      // }
+               
+    //             background-size: 100% auto;
+    //             float: left;
+    //             width: 24px;
+    //             height: 24px;
+    //         }
+    //         .signature{
+    //             float: left;
+    //             height: 24px;
+    //             line-height: 24px;
+    //             font-size: 16px;
+    //             font-weight: 700;
+    //             margin-left: 6px;
+    //         }
+
+    //     }
+    //     .main-info{
+    //         width: 100%;
+    //         border-left: 1px solid #999;
+    //         margin-left: 11px;
+    //         padding: 5px 0 25px 13px;
+    //         font-size: 13px;
+    //         .detail1{
+    //          span{
+    //              color: #4586FF;
+    //          }
+                
+    //         }
+            
+    //         .detail2 {
+    //             span{
+    //                 color: #4586FF;
+    //             }
+    //         }
+    //         .timer{
+    //             color:#999;
+    //             span{
+    //                 margin-left: 5px;
+    //             }
+    //         }
+    //     }
+    //     .step1{
+    //      width: 100%;
+    //      height: 24px;
+    //      line-height: 24px;
+    //      // background: gold;
+           
+    //         .dia{
+    //          width: 8px;
+    //          height: 8px;
+    //          background: #ccc;
+    //          border-radius: 50%;
+    //          margin-left: 7.5px;
+    //         }
+    //      //    span{
+    //      //     height: 24px;
+    //      //     line-height: 24px;
+    //      //     font-size: 16px;
+    //      //     font-weight: 700;
+    //      //     margin-left: 6px;
+
+    //      //    }
+
+
+        
+    //     }
+       
+    // }
+    // //第三个
+    //    li{
+    //     width: 110%;
+    //     margin-left: -35px;
+    //     .header{
+    //         overflow: hidden;
+    //         zoom: 1;
+    //         width: 100%;
+    //         height: 24px;
+    //         line-height: 24px;
+           
+    //         .succes{
+    //          @each $stautus in send ,road,{
+    //              background: url('/style/_asset/image/wuliu2/assets/#{$stautus}.png') no-repeat 0 0;
+    //          }
+    //      //     &:first-child{
+    //      //         @each $stautus in change01 cash01{
+    //      //             background: url('/style/_asset/image/wuliu2/assets/#{$stautus}.png') no-repeat 0 0;
+
+    //      //     }
+           
+    //      // }
+               
+    //             background-size: 100% auto;
+    //             float: left;
+    //             width: 24px;
+    //             height: 24px;
+    //         }
+    //         .signature{
+    //             float: left;
+    //             height: 24px;
+    //             line-height: 24px;
+    //             font-size: 16px;
+    //             font-weight: 700;
+    //             margin-left: 6px;
+    //         }
+
+    //     }
+    //     .main-info{
+    //         width: 100%;
+    //         border-left: 1px solid #999;
+    //         margin-left: 11px;
+    //         padding: 5px 0 25px 13px;
+    //         font-size: 13px;
+    //         .detail1{
+    //          span{
+    //              color: #4586FF;
+    //          }
+                
+    //         }
+            
+    //         .detail2 {
+    //             span{
+    //                 color: #4586FF;
+    //             }
+    //         }
+    //         .timer{
+    //             color:#999;
+    //             span{
+    //                 margin-left: 5px;
+    //             }
+    //         }
+    //     }
+    //     .step1{
+    //      width: 100%;
+    //      height: 24px;
+    //      line-height: 24px;
+    //      // background: gold;
+           
+    //         .dia{
+    //          width: 8px;
+    //          height: 8px;
+    //          background: #ccc;
+    //          border-radius: 50%;
+    //          margin-left: 7.5px;
+    //         }
+    //      //    span{
+    //      //     height: 24px;
+    //      //     line-height: 24px;
+    //      //     font-size: 16px;
+    //      //     font-weight: 700;
+    //      //     margin-left: 6px;
+
+    //      //    }
+
+
+        
+    //     }
+       
+    // }
+   
+
+
+   }
+   
+
+    
+}

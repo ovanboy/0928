@@ -1,0 +1,608 @@
+@charset "utf-8";
+
+@import "variable.scss";
+@import "mixin.scss";
+
+
+body {
+    font-family: "PingFang SC", "Source Han Sans CN", "Microsoft Yahei", Tahoma, Arial, sans-serif;
+}
+
+body{
+    background-color: transparent;
+}
+
+input{  
+	background:none;  
+	outline:none;  
+	border:1px solid #ccc;
+}
+input:focus{   
+	border:none;
+}
+
+#my-video{
+    transition: all 0.5s;
+}
+
+#my-video.fix-top{
+    position: fixed;
+    top: 44px;
+    left: 0;
+    z-index: 9999;
+}
+
+.page-content{
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 64px;
+
+    #my-video{
+        width: 100%;
+        height: 4.22rem;
+    }
+    
+    .vjs-play-control.vjs-control.vjs-button.vjs-paused .vjs-icon-placeholder:before{
+        //暂停
+        line-height: 62px;
+    }
+    .vjs-icon-pause:before, .video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before{
+        content: '';
+        width: 48px;
+        height: 62px;
+        display: block;
+        background: url("../../data/image/lion/icon-pause.png") center center no-repeat;
+        background-size: 15px;
+    }
+    .vjs-play-control.vjs-control.vjs-button.vjs-playing .vjs-icon-placeholder:before{
+        //播放
+        line-height: 62px;
+    }
+    .vjs-button > .vjs-icon-placeholder:before{
+        font-size: 2.8em;
+    }
+    // .vjs-icon-play:before, .video-js .vjs-play-control .vjs-icon-placeholder:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before{
+    //     content: '';
+    //     width: 48px;
+    //     height: 62px;
+    //     display: block;
+    //     background: url("../../data/image/lion/icon-pause.png") center center no-repeat;
+    //     background-size: 20px;
+    // }
+    .vjs-icon-fullscreen-enter:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before{
+        // 全屏按钮
+        line-height: 62px;
+        content: '';
+        width: 48px;
+        height: 62px;
+        display: block;
+        background: url("../../data/image/lion/icon-fullscreen-enter.png") center center no-repeat;
+        background-size: 20px;
+    }
+    .vjs-icon-fullscreen-exit:before, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before{
+        //退出全屏按钮
+        line-height: 62px;
+        content: '';
+        width: 48px;
+        height: 62px;
+        display: block;
+        background: url("../../data/image/lion/icon-fullscreen-exit.png") center center no-repeat;
+        background-size: 20px;
+    }
+    
+    //控制栏
+    .video-js .vjs-control-bar{
+        background-image: linear-gradient(180deg,rgba(66,66,66,0.00) 0%, rgba(20,20,20,0.66) 100%);
+        background-color: transparent;
+        // position: relative;
+        // width: 100%;
+        height: 62px;
+    }
+    //音量icon
+    .video-js .vjs-volume-panel{
+        display: none;
+    }
+    //已播放时长
+    .video-js .vjs-current-time, .vjs-no-flex .vjs-current-time{
+        display: block;
+    }
+    //视频总时长
+    .video-js .vjs-duration, .vjs-no-flex .vjs-duration{
+        display: block;
+        position: absolute;
+        right: 48px;
+        top: center;
+    }
+    
+    .video-js .vjs-picture-in-picture-control{
+        display: none;
+    }
+    
+    //剩余时长
+    .video-js .vjs-remaining-time{
+        display: none;
+    }
+    
+    
+    .video-js .vjs-play-control,
+    .video-js .vjs-current-time, .vjs-no-flex .vjs-current-time,
+    .video-js .vjs-duration, .vjs-no-flex .vjs-duration,
+    .video-js .vjs-fullscreen-control{
+        line-height: 62px;
+    }
+    
+    .video-js .vjs-progress-control{
+        margin-right: 50px;
+    }
+    
+    .video-js .vjs-play-progress{
+        //已播放背景色
+        background-color: #399cff;
+    }
+    
+    .video-js .vjs-current-time-display{
+        color: #fff;
+    }
+    
+    .video-js .vjs-progress-holder{
+        height: 3px;
+    }
+    
+    .video-js .vjs-play-progress.vjs-slider-bar:before{
+        color: #399cff;
+        font-size: 12px;
+        z-index: 2;
+        // font-size: 0.8em;
+    }
+    .video-js .vjs-play-progress.vjs-slider-bar:after{
+        color: #399cff;
+        opacity: 0.3;
+        font-size: 20px;
+        position: absolute;
+        right: -0.51em;
+        top: -0.38em;
+        z-index: 1;
+        box-sizing: border-box;
+        content: "\f111";
+    }
+    
+    .video-js .vjs-control-bar .vjs-current-time-display,
+    .video-js .vjs-control-bar .vjs-duration-display{
+        font-size: 15px;
+    }
+}
+
+.content-sm{
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;;
+    .brief-int{
+        padding: 15px 15px 20px;
+        .brief-int-title{
+            color: #222;
+            font-size: 18px;
+            letter-spacing: 0;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .brief-int-text{
+            margin-bottom: 12px;
+            color: #999;
+            font-size: 13px;
+            line-height: 18px;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .brief-int-bottom{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 13px;
+            line-height: 18px;
+            .brief-int-bot-time{
+                color: #999;
+                font-size: 13px;
+                line-height: 18px;
+            }
+            .brief-int-bot-rig{
+                display: flex;
+                .looked{
+                    padding-left: 20px;
+                    margin-right: 16px;
+                    background: url("../../data/image/lion/detail-looked-icon.png") left center no-repeat;
+                    background-size: 18px;
+                }
+                .fabulous{
+                    padding-left: 20px;
+                    background: url("../../data/image/lion/detail-fabulous-icon.png") left center no-repeat;
+                    background-size: 15px;
+                }
+            }
+        }
+    }
+    
+    .img-article{
+        padding: 0 15px;
+        .article-top,.article-bottom{
+            font-size: 13px;
+            color: #222222;
+            line-height: 18px;
+            margin-bottom: 20px;
+        }
+        .img{
+            width: 100%;
+            margin-bottom: 20px;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    
+    .detail-btn{
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        .collection-btn{
+            width: 86px;
+            height: 28px;
+            background: url("../../data/image/lion/collection-btn-icon.png") no-repeat;
+            background-size: 100%;
+            &.active{
+                background: url("../../data/image/lion/collection-btn-icon-active.png") no-repeat;
+                background-size: 100%;
+            }
+        }
+        .fabulous-btn{
+            width: 86px;
+            height: 28px;
+            background: url("../../data/image/lion/fabulous-btn-icon.png") no-repeat;
+            background-size: 100%;
+            &.active{
+                background: url("../../data/image/lion/fabulous-btn-icon-active.png") no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+}
+
+.comment-area{
+    width: 100%;
+    // padding-left: 15PX;
+    .comment-area-title-lg{
+        width: 100%;
+        height: 48px;
+        .comment-area-title{
+            background-color: #fff;
+            padding-left: 15px;
+            width: 100%;
+            height: 48px;
+            font-size: 18px;
+            color: #222;
+            line-height: 48px;
+            .num{
+                font-size: 13px;
+                color: #999;
+            }
+            &.fix-page-top{
+                position: fixed;
+                top: 44px;
+                left: 0;
+                z-index: 99999;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            &.fix-video-bottom{
+                position: fixed;
+                left: 0;
+                //top: 40px; //top值需要js设置
+                z-index: 99999;
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
+    }
+    .comment-area-con{
+        padding-left: 15px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 15px;
+        .img{
+            width: 36px;
+            height: 36px;
+            img{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+        .com-con{
+            width: 0;
+            flex: 1;
+            padding-right: 15px;
+            padding-left: 8px;
+            border-bottom: 1px solid #e0e0e0;
+            .com-con-name{
+                height: 20px;
+                line-height: 20px;
+                font-size: 13px;
+                color: #666;
+                position: relative;
+                &.active{
+                    color: #4586FF;
+                    &:before{
+                        height: 20px;
+                        line-height: 20px;
+                        padding: 0 6px;
+                        font-size: 13px;
+                        content: '置顶';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        color: #fff;
+                        background-image: linear-gradient(137deg, #7BBBFF 0%, #4586FF 100%, #4586FF 100%);
+                        border-radius: 2px;
+                    }
+                }
+            }
+            .com-con-time{
+                font-size: 12px;
+                color: #999;
+                line-height: 12px;
+                margin-bottom: 8px;
+            }
+            .com-con-con{
+                font-size: 13px;
+                color: #222;
+                margin-bottom: 10px;
+            }
+            .com-con-bottom{
+                margin-bottom: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .com-con-bottom-left{
+                    font-size: 13px;
+                    color: #999;
+                }
+                .com-con-bottom-right{
+                    display: flex;
+                    font-size: 13px;
+                    color: #999;
+                    .fabulous,.reply{
+                        padding-left: 18px;
+                    }
+                    .fabulous{
+                        background: url("../../data/image/lion/detail-fabulous-icon.png") left center no-repeat;
+                        background-size: 13px;
+                        &.active{
+                            color:#4586ff;
+                            background: url("../../data/image/lion/detail-fabulous-icon-act.png") left center no-repeat;
+                            background-size: 13px;
+                        }
+                    }
+                    .reply{
+                        background: url("../../data/image/lion/detail-fabulous-icon.png") left center no-repeat;
+                        background-size: 13px;
+                        margin-left: 15px;
+                    }
+                }
+            }
+            .com-con-reply{
+                width: 100%;
+                padding: 6px 8px;
+                background-color:  #F4F6F8;
+                margin-bottom: 10px;
+                .person-reply-con{
+                    display: flex;
+                    .person-name{
+                        font-size: 12px;
+                        color: #666;
+                        margin-right: 5px;
+                    }
+                    .reply-time{
+                        font-size: 12px;
+                        color: #999;
+                    }
+                }
+                .con-reply-con{
+                    width: 100%;
+                    font-size: 12px;
+                    color: #222;
+                    // overflow: hidden;
+                    // -o-text-overflow: ellipsis;
+                    // text-overflow: ellipsis;
+                    // display: -webkit-box;
+                    // // -webkit-line-clamp: 2;
+                    // -webkit-box-orient: vertical;
+
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    .comment-say-area{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 64px;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px 15px 0;
+        border-top: 1px solid #E8E8E8;
+        // &.active{
+        //     width: 100%;
+        //     height: 104px;
+        //     .comment-say.active{
+
+        //     }
+        //     .comment-btn-lg{
+        //         display: none;
+        //     }
+        //     .comment-sub{
+        //         display: block;
+
+        //     }
+        // }
+        &.hidden{
+            display: none;
+        }
+        .comment-say{
+            display: block;
+            position: relative;
+            width: 4.92rem;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 22px;
+            padding-left: 50px;
+            font-size: 15px;
+            color: #666;
+            border: none;
+            background: url("../../data/image/lion/person-img1.png") 4px 4px no-repeat;
+            background-size: 36px;
+            background-color: #F4F6F8;
+            // &::before{
+            //     content: '';
+            //     display: block;
+            //     position: absolute;
+            //     top: 4px;
+            //     left: 4px;
+            //     width: 36px;
+            //     height: 36px;
+            //     background: url("../../data/image/lion/person-img1.png") no-repeat;
+            //     background-size: 100%;
+            // }
+        }
+        .comment-btn-lg{
+            display: block;
+            display: flex;
+            height: 44px;
+            padding-top: 4px;
+            .comment-btn-sm,.collection-btn-sm,.fabulous-btn-sm{
+                height: 44px;
+                padding: 0 9px;
+                padding-top: 19px;
+                text-align: center;
+                font-size: 12px;
+            }
+            .comment-btn-sm{
+                background: url("../../data/image/lion/comment-comment-icon.png") center top no-repeat;
+                background-size: 20px;
+            }
+            .collection-btn-sm{
+                background: url("../../data/image/lion/comment-collection-icon.png") center top no-repeat;
+                background-size: 20px;
+                &.active{
+                    background: url("../../data/image/lion/comment-collection-icon-active.png") center top no-repeat;
+                    background-size: 20px;
+                }
+            }
+            .fabulous-btn-sm{
+                background: url("../../data/image/lion/comment-fabulous-icon.png") center top no-repeat;
+                background-size: 20px;
+                &.active{
+                    background: url("../../data/image/lion/comment-fabulous-icon-active.png") center top no-repeat;
+                    background-size: 20px;
+                }
+            }
+        }
+    }
+    .comment-area-active{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 104px;
+        padding: 10px 0 10px 10px;
+        background-color: #fff;
+        display: flex;
+        &.hidden{
+            display: none;
+        }
+        textarea.comment-con{
+            flex: 1;
+            height: 100%;
+            line-height: 20px;
+            background-color: #F4F6F8;
+            border: none;
+            font-size: 13px;
+            color: #222;
+        }
+        .sub-btn{
+            width: 65px;
+            height: 84px;
+            line-height: 84px;
+            font-size: 16px;
+            color: #ccc;
+            text-align: center;
+            &.active{
+                color: #4586FF;
+            }
+        }
+    }
+}
+
+.loadding-html{
+    text-align: center;
+
+    .init{
+        display: block;
+        img{
+            width: 55px;
+            height: 55px;
+            margin-top: 50px;
+        }
+    }
+
+    .follow{
+        display: none;
+        // height: 72px;
+        // background-color: #F4F6F8;
+        padding: 10px 0;
+        // display: none;
+        img{
+            width: 50px;
+        }
+    }
+}
+
+.exchangeLoadding .loadding-html{
+    .init{
+        display: none;
+    }
+    .follow{
+        display: block;
+    }
+}
+
+
+.no-more-data-html{
+    // background-color: rgb(244,246,248);
+    text-align: center;
+    padding: 10px 0;
+
+    span{
+        color: #999;
+        display: inline-block;
+        &::after,&::before{
+            content:"-";
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 5px;
+        }
+    }
+}
+
+

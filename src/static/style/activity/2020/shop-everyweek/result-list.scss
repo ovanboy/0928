@@ -1,0 +1,101 @@
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+} 
+a {
+  text-decoration: none;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.prizeNum{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #ECF3FF;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #4586FF;
+}
+.listitem{
+  padding: 12px 15px;
+  height: 105px;
+  display: -webkit-flex;
+  display: flex;
+  background: #fff;
+  margin-bottom: 10px;
+  .item{
+    height: 80px;
+  }
+  .left{
+    height: 80px;
+    width: 80px;
+    position: relative;
+    top: 0;
+    left:0;
+    .pro{
+      width: 80px;
+      height: 80px;
+    }
+    .icon{
+      width: 60px;
+      height: 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background:url("/style/_asset/image/activity/2020/shop-everyweek/hadchoosed.png") 0 0/100% 100% no-repeat ;
+    }
+  }
+  .right{
+    padding-left: 10px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .name{
+      padding: 5px 0 0 0;
+      font-size: 15px;
+      color: #333333;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      line-height: 18px;
+    }
+    .bottom{
+      position: absolute;
+      top: 41px;
+      left: 10px;
+      p{
+        line-height: 17px;
+      }
+    }
+    .num,.latest{
+      font-size: 12px;
+      color: #888888;
+      .latestspan{
+        color: #FD2E2E;
+      }
+    }
+  }
+}
+.content-wrapper{
+  margin-bottom: 32px;
+}
+.foot{
+  text-align: center;
+  button{
+    background-image: linear-gradient(180deg, #FF6F6F 0%, #FE2223 100%);
+    border-radius: 7px;
+    width: 260px;
+    height: 44px;
+    font-size: 15px;
+    color: #FFFFFF;
+    border: none;
+  }
+}

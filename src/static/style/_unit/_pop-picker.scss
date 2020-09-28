@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+
+.#{$namespace}pop-picker {
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    // border-top: solid 1px #ccc;
+    box-shadow: 0px -5px 7px 0px rgba(0, 0, 0, 0.1);
+    -webkit-transition: .3s;
+    bottom: 0px;
+    -webkit-transform: translateY(300px);
+    &.active {
+        -webkit-transform: translateY(0px);
+    }
+}
+.android-5-1 .#{$namespace}pop-picker {
+    bottom: -300px;
+    -webkit-transition-property: bottom;
+    -webkit-transform: none;
+}
+.android-5-1 .#{$namespace}pop-picker.active {
+    bottom: 0px;
+    -webkit-transition-property: bottom;
+    -webkit-transform: none;
+}
+.#{$namespace}pop-picker-header {
+    position: relative;
+    height: 44px;
+}
+.#{$namespace}pop-picker-btn {
+    position: absolute;
+    top: 0;
+    margin: 0; //For mobile button input[type=button]
+    transition: all .2s linear 0s;
+    @include single-line-text();
+    padding: 11px 15px;
+    width: 60px;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    line-height: 22px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+    color: #222;
+    &.cancel {
+        left: 0;
+    }
+    &.submit {
+        right: 0;
+    }
+    &:active {
+        background-color: #f8f8f8;
+    }
+}
+.#{$namespace}pop-picker-title {
+    height: 44px;
+    padding: 0 70px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #222;
+    text-align: center;
+    @include single-line-text();
+}
+
+
+.#{$namespace}pop-picker-clear {
+    clear: both;
+    height: 0px;
+    line-height: 0px;
+    font-size: 0px;
+    overflow: hidden;
+}
+.#{$namespace}pop-picker-body {
+    position: relative;
+    width: 100%;
+    height: 234px;
+    // border-top: solid 1px #ddd;
+    /*-webkit-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;*/
+}
+.#{$namespace}pop-picker-body .picker {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    border: none;
+    float: left;
+}

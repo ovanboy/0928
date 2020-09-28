@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+.#{$namespace}dialog {
+    $lineColor: #e8e8e8 !default;
+    $primaryColor: #4586ff !default;
+
+    position: fixed;
+    //z-index: 2000;
+    left: 50%;
+    top: 50%;
+    width: 275px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0 0 44px 0;
+    border-radius: 12px;
+    text-align: center;
+    color: #222;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(-50%,-50%,0) scale(1.185);
+    transition: transform .3s ease 0s, opacity .3s ease 0s;
+    &.opened {
+        opacity: 1;
+        transform: translate3d(-50%,-50%,0) scale(1);
+    }
+    .#{$namespace}dialog-content {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 44px;
+        position: relative;
+        height: 100%;
+        max-height: 100%;
+        background-color: #fff;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            background-color: $lineColor;
+            transform: scaleY(.5);
+            transform-origin: center bottom;
+        }
+    }
+    .#{$namespace}dialog-close-btn {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        background: url("/style/_asset/image/ui/3.0/dialog/icon-layer-close.png") no-repeat;
+        background-size: 18px auto;
+    }
+    .#{$namespace}dialog-inner {
+        padding: 15px;
+    }
+    .#{$namespace}dialog-title {
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+    }
+    .#{$namespace}dialog-title+.#{$namespace}dialog-text {
+        margin: 5px 0 0;
+        font-family: inherit;
+        font-size: 15px;
+    }
+    .#{$namespace}dialog-buttons {
+        display: table;
+        table-layout: fixed;
+        // height: 44px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .#{$namespace}dialog-button {
+        @include ellipsis();
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        width: 1%;
+        height: 44px;
+        padding: 0 5px;
+        background-color: #fff;
+        text-align: center;
+        color: $primaryColor;
+        font-size: 15px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            background-color: $lineColor;
+            transform: scaleX(.5);
+            transform-origin: left center;
+        }
+        &:first-child {
+            &:after {
+                display: none;
+            }
+        }
+        &.main {
+            font-weight: bold;
+        }
+        &:active {
+            background-color: #f8f8f8;
+        }
+        &.disabled {
+            color: #C2C2C2;
+            background-color: #fff;
+        }
+        .button-text {
+            @include ellipsis();
+        }
+    }
+    .#{$namespace}dialog-input input {
+        height: 26px;
+        background: #fff;
+        margin: 15px 0 0;
+        padding: 0 5px;
+        border: 1px solid rgba(0,0,0,.3);
+        border-radius: 0;
+        width: 100%;
+        font-size: 14px;
+        outline: 0;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+    }
+}
+

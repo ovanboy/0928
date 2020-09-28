@@ -1,0 +1,567 @@
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+.page-content {
+  background: #f7dbd4;
+}
+a {
+  text-decoration: none;
+}
+.hided{
+  display: none;
+}
+.showd{
+  display: block;
+}
+.ui-layer {
+  height: 395px;
+  .ui-layer-close-btn{
+    top: 425px;
+    right: 128px;
+    width: 44px;
+    height: 44px;
+    background-size: 100%;
+    background:  url("/style/_asset/image/activity/2020/shop-everyweek/btnclose.png") 0/44px no-repeat;
+}}
+
+.prize-layer-content{
+  text-align: center;
+  color: #333333;
+  .layerimg{
+    margin-bottom: 13px;
+  }
+  img{
+    width: 300px;
+    height: 300px;
+  }
+  .tit{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 2px
+  }
+  .comp{
+    font-size: 14px;
+    span{
+      color: #FD2E2E;
+    }
+  }
+}
+.main-background {
+  position: relative;
+  background-image:  url("/style/_asset/image/activity/2020/shop-everyweek/mainbg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 239px;
+  width: 100%;
+  .rule {
+    position: absolute;
+    right: 0;
+    top: 142px;
+    width: 72px;
+    height: 26px;
+    // line-height: 24px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #fff;
+    background-image: linear-gradient(180deg, #375BAA 0%, #2F4E90 100%);
+    border: 1px solid #4367B7;
+    border-radius: 50px 0 0 50px;
+    font-weight: bold;
+    padding-left: 20px;
+    &::before{
+      content: "";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      margin-top: -6px;
+      background:url("/style/_asset/image/activity/2020/shop-everyweek/icon1.png") 0 0/100% 100% no-repeat ;
+    }
+  }
+  .calendar{
+    @extend .rule;
+    margin-top: 30px;
+    background-image: linear-gradient(180deg, #FF6363 0%, #FF3232 100%);
+    border: 1px solid #FF8686;
+    &::before{
+      content: "";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      margin-top: -6px;
+      background: url("/style/_asset/image/activity/2020/shop-everyweek/icon2.png") 0 0/100% 100% no-repeat ;
+    }
+  }
+}
+.main-countent {
+  position: relative;
+  padding: 0 15px;
+}
+.content-box {
+  width: 100%;
+  height: 417px;
+  margin: -30px 0 21px 0;
+  background: #f7dbd4 url("/style/_asset/image/activity/2020/shop-everyweek/choose.png") 0 0/100% 100% no-repeat ;
+  padding: 18px;
+  border-radius: 31px;
+  .prize{
+    height: 230px;
+    overflow: hidden;
+    padding: 20px 10px 11px 15px;
+    & > p{
+      font-size: 11px;
+      color: #888888;
+      line-height: 14px;
+    }
+  }
+  .havechoosed{
+    .colr{
+      color: #FD2E2E;
+    }
+    .big{
+      font-size: 22px;
+    }
+    .toptxt{
+      font-size: 16px;
+      color: #333333; 
+      text-align: center;
+    }
+    .btmtxt{
+      font-size: 12px;
+      color: #333333; 
+      text-align: center;
+    }
+    .prizebox{
+      background-image: linear-gradient(180deg, #FF7460 0%, #F35858 100%);
+      border-radius: 9px;
+      margin: 7px 0 4px 0;
+      height: 110px;
+      padding: 3px;
+      .top{
+        height: 64px;
+        padding: 4px 2px;
+        background-color: #fff;
+        border-radius: 6px;
+        img{
+          width: 55px;
+          height: 55px;
+          float: left;
+          margin-right: 10px;
+        }
+        .pbox{
+          font-size: 12px;
+          color: #333333;
+          line-height: 18px;
+        }
+      }
+      .btm{
+        height: 37px;
+        margin-top: 6px;
+        display: flex;
+        .btmitem{
+          flex: 1;
+          height: 37px;
+          p{
+            font-size: 11px;
+            color: #fff;
+            line-height: 33px;
+            padding-left: 10px;
+          }
+          button{
+            width: 130px;
+            height: 31px;
+            background-image: linear-gradient(180deg, #FFEC6B 0%, #FFA939 100%);
+            border-radius: 15px;
+            border: none;
+            font-size: 14px;
+            color: #DE2828;
+            font-weight: bold;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+  .banner-list{
+    height: 156px;
+    margin-bottom: 10px;
+    li{
+      width: 86px;
+      height: 156px;
+      .img-box{
+        width: 86px;
+        height: 126px;
+        background-image:  linear-gradient(180deg, #FF7460 0%, #F35858 100%);
+        border-radius: 9px;
+        padding: 3px;
+        text-align: center;
+        margin-bottom: 8px;
+        .tagicon{
+          width: 74px;
+          height: 17px;
+          position: absolute;
+          top: -5px;
+          left: -3px;
+          background: url("/style/_asset/image/activity/2020/shop-everyweek/tagicon.png") 0 0/100% 100% no-repeat ;
+          font-size: 9px;
+          line-height: 17px;
+          text-align: center;
+          color: #FFFFFF;
+          z-index: 1;
+        }
+        .img{
+          width: 80px;
+          height: 97px;
+          border-radius: 6px;
+          overflow: hidden;
+          position: relative;
+          top: 0;
+          left: 0;
+          margin-bottom: 3px;
+          .pbox{
+            width: 100%;
+            height: 56px;
+            padding-top: 24px;
+            border-radius: 6px;
+            position: absolute;
+            bottom: 0;
+            background-image: linear-gradient(180deg, rgba(195,195,195,0.00) 0%, #878787 100%);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            p{
+              font-size: 12px;
+              color: #fff;
+              line-height: 14px;
+              font-weight: bold;
+            }
+          }
+        }
+        & > p{
+          font-size: 11px;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+      .choosebtn{
+        width: 66px;
+        height: 21px;
+        margin-left:10px;
+        border: none;
+        background-image: linear-gradient(180deg, #FFEC6B 0%, #FFA939 100%);
+        border-radius: 10px;
+        font-size: 13px;
+        color: #DE2828;
+        font-weight: bold;
+      }
+    }
+  }
+  .goldbrick{
+    margin-top: 49px;
+    width: 100%;
+    height: 110px;
+    .sum{
+      width: 50%;
+      height:44px;
+      margin-bottom: 10px;
+    }
+    .sum1{
+      float: left;
+    }
+    .sum2{
+      float: right;
+      .num{
+        height: 34px;
+        width: 52.7%;
+        margin: 5px 0;
+        margin-left: 5.3%;
+        text-align: center;
+        line-height: 34px;
+        float: left;
+        span{
+          width: 20px;
+          height: 21px;
+          position: relative;
+          font-size: 19px;
+          color: #FFFFFF;
+          padding-left: 22px;
+          &::before{
+            content: "";
+            width: 20px;
+            height: 21px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -10px;
+            background: url("/style/_asset/image/activity/2020/shop-everyweek/iconbrick.png") 0 0/100% 100% no-repeat;
+          }
+        }
+      }
+    }
+    .brickdetail{
+      width: 40px;
+      height: 40px;
+      float: right;
+      background-image: linear-gradient(180deg, #FF7070 0%, #FF3232 100%);
+      border-radius: 11px;
+      margin-right: 3px;
+      padding: 8px 0;
+      p{
+        font-size: 12px;
+        color: #FFE1E1;
+        text-align: center;
+        line-height: 12px;
+        font-weight: bold;
+      }
+    }
+    .checkrule{
+      margin:0 0 5px 15px;
+      font-size: 13px;
+      color: #333333;
+      span{
+        color: #FA1313;
+        position: relative;
+        left: 0;
+        top: 0;
+        padding-right: 8px;
+        &::after{
+          content: "";
+          width: 6px;
+          height: 10px;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -5px;
+          background: url("/style/_asset/image/activity/2020/shop-everyweek/iconarrow.png") 0 0/100% 100% no-repeat;
+        }
+      }
+    }
+    .info{
+      font-size: 11px;
+      color: #888888;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+  }
+}
+.getmore{
+  height: 50px;
+  width: 283px;
+  background: url("/style/_asset/image/activity/2020/shop-everyweek/getmore.png") 0 0/100% 100% no-repeat;
+  margin: 0 auto;
+}
+.getmoreentry{
+  margin: 12px 0 18px 0;
+  height: 152px;
+  .entry{
+    width: 49%;
+    height: 152px;
+    border-radius: 12px; 
+    padding: 10px;
+    background: url("/style/_asset/image/activity/2020/shop-everyweek/entrybg.png") 0 0/100% 100% no-repeat;
+    .entruimg{
+      width: 100%;
+      height: 106px;
+      overflow: hidden;
+      .time{
+        text-align: center;
+        font-size: 11px;
+        color: #952726; 
+        margin-top: 84px;
+      }
+    }
+    .entryinfo{
+      margin-top:8px ;
+      float: right;
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+  .entry1{
+    float: left;
+    .entruimg{
+      background: url("/style/_asset/image/activity/2020/shop-everyweek/banner1.png") 0 0/100% 100% no-repeat;
+    }
+  }
+  .entry2{
+    float: right;
+    .entruimg{
+      background: url("/style/_asset/image/activity/2020/shop-everyweek/banner2.png") 0 0/100% 100% no-repeat;
+    }
+  }
+}
+.gameinfo{
+  color: #E92B2B;
+  font-size: 13px;
+  .tit{
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.mygift{
+  height: 239px;
+  margin: 30px 0 30px 0;
+  padding:32px 25px 25px 25px;
+  background: url("/style/_asset/image/activity/2020/shop-everyweek/mygift.png") 0 0/100% 100% no-repeat;
+  .box{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+  }
+  .item{
+    height: 21px;
+    width: 42px;
+    background: #FCC5BA;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #FF8D77;
+    text-align: center;
+    line-height: 21px;
+  }
+  .active{
+    background-image: linear-gradient(180deg, #FF7070 0%, #FF3232 100%);
+    color: #fff;
+    font-weight: bold;
+  }
+  .tabbox{
+    .com{
+      display: none;
+      overflow: hidden;
+      text-align: center;
+    }
+    .show{
+      display: block;
+    }
+    .buttoncom{
+      width: 141px;
+      height: 31px;
+      background-image: linear-gradient(180deg, #FFEC6B 0%, #FFA939 100%);
+      border-radius: 20px;
+      border: none;
+      font-size:14px;
+      color: #DE2828;
+      font-weight: bold;
+    }
+    .notjoin{
+      background: url("/style/_asset/image/activity/2020/shop-everyweek/mygift-no.png") 50% 19px/88px 80px no-repeat;
+      p{
+        margin:102px 0 8px 0; 
+        font-size: 14px;
+        color: #666;
+      }
+      button{
+       @extend .buttoncom
+      }
+    }
+    .noprize{
+      @extend .notjoin
+    }
+    .getadress{
+      img{
+        width: 66px;
+        height: 66px;
+        border-radius: 8px;
+        margin: 14px 0 0 0;
+      }
+      p{
+        line-height: 15px;
+        margin-bottom: 11px;
+        .spn1{
+          font-size: 14px;
+          color: #333333;
+        }
+        .spn2{
+          font-size: 12px;
+          color: #DE2828;
+        }
+      }
+      button{
+        @extend .buttoncom;
+        width:120px;
+        &:first-child{
+          margin-right: 12px;
+        }
+      }
+    }
+    .expect{
+      padding: 10px;
+      line-height: 10px;
+      .one{
+        margin-top: 48px;
+      }
+      p{
+        font-size:16px;
+        color: #FF5555;
+      }
+    }
+  }
+}
+.form-element {
+  position: relative;
+  background-color: #fff;
+  &.form-input,&.form-select,&.form-choose,.form-input {
+      width: 100%;
+      height: 50px;
+      font-size: 15px;
+      line-height: 50px;
+      padding: 0 0 0 112px;
+  }
+  &.form-input .cont,.form-input .cont{
+    position: relative;
+    z-index: 2;
+    input[type=tel],input[type=text] {
+        width: 100%;
+        height: 50px;
+        background-color: transparent;
+        border-width: 0;
+        font-size: 14px;
+        line-height: 21px;
+        padding: 14px 0 15px 0;
+        margin-top: 0;
+        z-index: 2;
+    }
+    input::-webkit-input-placeholder {
+        color: #999;
+    }
+}
+&:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e8e8e8;
+  transform: scaleY(.5);
+  transform-origin: center top;
+}
+.label {
+  position: absolute;
+  left: 15px;
+  top: 0;
+}
+}
+#address{
+  height:60px;
+  width: 100%;
+  border: none;
+}
+.ui-pop-layer-content{
+  padding: 0 15px;
+}
+.cont{
+  font-size: 14px;
+  color: #333;
+}
+#btncomfirm{
+  margin-top: 50px;
+}

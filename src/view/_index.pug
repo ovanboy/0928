@@ -1,0 +1,41 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '文件索引'
+    - var list = pageData.fileInfoList
+    - var directories = pageData.directories
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/index.scss')}`)
+
+block pageHeader
+
+block pageContent
+    #catalog.catalog
+        if list.length > 0
+            ul
+                each item in list
+                    if item.isDirectory
+                        li
+                            a.page-dir(href=item.url) #{item.name}
+                    else
+                        li
+                            a.page-link(href=item.url) #{item.name}
+        else
+            .no-data 暂无内容
+    #nav.nav
+        if directories.length === 0
+            span.nav-item.root
+        else
+            a.nav-item.root(href="/")
+            each directory, index in directories
+                if index === directories.length-1
+                    span.nav-item.current #{directory}
+                else
+                    a.nav-item(href=`${'/'+directories.slice(0,index+1).join('/')}`) #{directory}
+
+append script
+    script(src=`${_static('script/entry/index.js')}`)
+    //- script.
+    //-     console.log(!{JSON.stringify(list)});
+    //-     console.log(!{JSON.stringify(directories)});

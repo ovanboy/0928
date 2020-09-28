@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+// 字体
+$font-family: "Microsoft Yahei", Tahoma, Arial, sans-serif;
+$fs:15px;    
+$fs-big:21px;
+
+//宽高间距
+$h-icon:14px;//图标高度
+$w-icon:14px;//图标宽度
+$w-pad-lr:15px;//左右padding
+
+
+// 颜色
+$text-color:#333;
+$text-color-lighter:#999;
+$color-bg-gray:#f2f2f2;
+$color-text-black: #333333;//文本主色
+$color-text-red: #ff2244;//文本红色
+$color-text-gray:#878787;//灰色字体
+$color-placeholder:#878787;//input占位符颜色
+$color-link:#3e73ff;  //链接文本色
+$color-btn-bg-primary:#3e73ff;  //按钮主色
+$color-btn-bg-disable:#ccc;  //按钮置灰色
+$color-border:#e8e8e8;//border颜色
+$color-toast-bg:rgba(0,0,0,.65);//错误提示背景色
+//mdui 前缀
+$prefix:md;
+$namespace: ui-;
+
+

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+.#{$namespace}dialog {
+    width: 275px;
+    position: fixed;
+    //z-index: 2000;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0;
+    transition: transform .3s ease 0s, opacity .3s ease 0s;
+    transform: translate3d(-50%,-50%,0) scale(1.185);
+    color: #000;
+    &.opened {
+        opacity: 1;
+        //transition-duration: .3s;
+        transform: translate3d(-50%,-50%,0) scale(1);
+    }
+}
+.#{$namespace}dialog-inner {
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    background: #fff;// rgba(255,255,255,.95);
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 100%;
+        background-color: #e8e8e8;// rgba(0,0,0,.2);
+        display: block;
+        z-index: 15;
+        transform-origin: 50% 100%;
+        transform: scaleY(.5);
+    }
+}
+.#{$namespace}dialog-title {
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+.#{$namespace}dialog-title+.#{$namespace}dialog-text {
+    margin: 5px 0 0;
+    font-family: inherit;
+    font-size: 14px;
+}
+.#{$namespace}dialog-buttons {
+    height: 44px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.#{$namespace}dialog-button {
+    width: 100%;
+    padding: 0 5px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    text-align: center;
+    color: #4586ff;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: #fff;// rgba(255,255,255,.95);
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: auto;
+        bottom: auto;
+        width: 1px;
+        height: 100%;
+        background-color: #e8e8e8;// rgba(0,0,0,.2);
+        display: block;
+        z-index: 15;
+        transform-origin: 100% 50%;
+        transform: scaleX(.5);
+    }
+    &:first-child {
+        border-radius: 0 0 0 12px;
+        &:last-child {
+            border-radius: 0 0 12px 12px;
+        }
+    }
+    &:last-child {
+        border-radius: 0 0 12px 0;
+        &:after {
+            display: none;
+        }
+    }
+    &.dialog-submit {
+        font-weight: bold;
+    }
+}
+.#{$namespace}dialog-input input {
+    height: 26px;
+    background: #fff;
+    margin: 15px 0 0;
+    padding: 0 5px;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 0;
+    width: 100%;
+    font-size: 14px;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+}
+
+.#{$namespace}dialog-close-btn {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 18px;
+    height: 18px;
+    background: url("/style/_asset/image/ui/icon-layer-close.png") no-repeat;
+    background-size: 18px auto;
+}

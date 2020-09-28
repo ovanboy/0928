@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+@import "3.0/base.scss";
+
+
+
+@keyframes loading {
+    0% {background-position-x: 0;}
+    100%{background-position-x: -3300px;}
+}
+
+.loading {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.1);
+    .inner-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -65px;
+        margin-left: -65px;
+        width: 130px;
+        height: 130px;
+        padding: 10px;
+        background-color: rgba(0,0,0,.4);
+        border-radius: 10px;
+        transform: scale(.5);
+    }
+    .inner {
+        width: 110px;
+        height: 110px;
+        background:  url("/style/_asset/image/ui/demo/loading.png") no-repeat;
+        // animation: ani 1s steps(30, end) infinite;
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: steps(30);
+        animation-iteration-count: infinite;
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '对话框组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/dialog.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#alert-btn.ui-btn.bigger.primary.block alert
+            button#confirm-btn.ui-btn.bigger.primary.block confirm
+            button#prompt-btn.ui-btn.bigger.primary.block prompt
+            button#custom-btn.ui-btn.bigger.primary.block 自定义
+        .ui-panel.content-btn-panel
+            button#authorization-btn.ui-btn.bigger.primary.block 用户授权案例
+
+block other
+    script#authorization-layer-tpl(type="text/template")
+        .authorization-layer
+            img.app-logo(src=`${_static('data/image/uc/logo-45.png')}`)
+            .desc
+                | 授权
+                span.target 饿了么
+                | 获取以下信息
+            .info 您的手机号、头像、昵称
+            .tips
+                | 同意
+                a(href="javascript:;") 服务条款
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/dialog.js')}`)

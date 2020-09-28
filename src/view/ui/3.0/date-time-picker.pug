@@ -1,0 +1,25 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '日期时间选择组件'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/date-time-picker.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#btn-datetime.ui-btn.primary.block 日期时间选择
+            button#btn-date.ui-btn.primary.block 日期选择
+            button#btn-month.ui-btn.primary.block 月份选择
+            button#btn-time.ui-btn.primary.block 时间选择
+            button#btn-hour.ui-btn.primary.block 小时选择
+        .ui-panel.content-btn-panel
+            button#btn-demo.ui-btn.primary.block 示例
+            button#btn-demo-date.ui-btn.primary.block 常见日期选择
+
+append script
+    script(src=`${_static('script/entry/ui/3.0/date-time-picker.js')}`)

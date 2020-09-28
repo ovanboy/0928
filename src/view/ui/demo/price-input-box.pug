@@ -1,0 +1,45 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '价格输入框组件'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/price-input-box.scss')}`)
+
+
+block pageContent
+    main.page-content
+        form.test-form(method="get")
+            .ui-panel
+                input.test-input-box(type="text")
+            .ui-panel
+                .amount-input-box(data-max="10000",data-min="500",data-multiple="100")
+                    input.value-input(type="hidden",name="amount")
+                    .input-wrapper
+                        .currency-symbol ￥
+                        .input-inner
+                            input.input-box(type="tel",maxlength="8")
+                            input.shadow-box(type="tel",tabIndex="-1",readonly=true)
+                            .clear-btn
+                            .view-box
+                                input.view(type="text",tabIndex="-1",readonly=true)
+                                .edit 修改
+                    .info-box
+                        .min-tips(data-amount="500")
+                            | 最低可借
+                            span.num 500
+                        .max-tips(data-amount="10000")
+                            | 最高可借
+                            span.num 10,000
+                    .error-box 最高借款金额10,000
+            .ui-panel
+                input.test-input-box(type="text")
+            .action-box
+                button.ui-btn.primary.block(type="submit") 提交
+        
+
+
+append script
+    script(src=`${_static('script/entry/ui/demo/price-input-box.js')}`)

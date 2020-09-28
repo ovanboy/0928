@@ -1,0 +1,106 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '视频大厅'
+    - var useRem = true
+
+append style
+    //- link(rel="stylesheet",type="text/css",href=`${_static('style/ensure/ensure-common.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/lion/home.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .page-content-sm
+            .title-content
+                .title-classroom.active 萌新课堂
+                .title-theatre 欢乐剧场
+            .main.classroom-content
+                .banner
+                    .swiper-container
+                        .swiper-wrapper
+                            each k in [1,2,3]
+                                .swiper-slide
+                                    img(src=`${_static('data/image/lion/banner1.png')}`)
+                        .swiper-pagination
+                .nav-list
+                    each k in ['全部','还款','账户安全','APP功能','活动','积分','权益','用卡','账单'] 
+                        //- .link(class=k=='全部' ? 'active' : '')
+                        .link(class=k=='全部' ? 'active' : '') #{k}
+                .scroll-container
+                    .list
+                        each k in (new Array(0)).fill('0')
+                            .holder 
+                                .img
+                                .detail
+            .theatre-content
+                .theatre-tv
+                    .tv-content
+                        .tv-img
+                            img(src=`${_static('data/image/lion/article-pic.png')}`)
+                        .tv-detail
+                            .tv-detail-title 猎场(第一季)
+                            .tv-detail-text 简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍
+                            .tv-detail-num 共12集
+                    .tv-btn
+                        each k in [1,2,3,4,5,6,7,8,9,10,11,"···"]
+                            .single-btn(class=k=='···' ? 'link' : '') #{k}
+                    .tv-btn.hidden
+                        each k in [13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+                            .single-btn #{k}
+                .theatre-tv
+                    .tv-content
+                        .tv-img
+                            img(src=`${_static('data/image/lion/article-pic.png')}`)
+                        .tv-detail
+                            .tv-detail-title 少年的你
+                            .tv-detail-text 简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍
+                            .tv-detail-num
+                                span.tv-update-num 更新至3集
+                                span.tv-update-date 每月15日更新
+                    .tv-btn
+                        each k in [1,2,3]
+                            .single-btn #{k}
+                .theatre-tv
+                    .tv-content
+                        .tv-img
+                            img(src=`${_static('data/image/lion/article-pic.png')}`)
+                        .tv-detail
+                            .tv-detail-title 无问西东
+                            .tv-detail-text 简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍简单介绍
+                            .tv-detail-num
+                                span.tv-update-num 更新至3集
+                                span.tv-update-date 每月15日更新
+                    .tv-btn
+                        each k in [1,2,3]
+                            .single-btn #{k}
+    script(type="text/template",id="loadding-html")
+        .loadding-html
+            .init
+                 img(src=`${_static('data/image/lion/init.gif')}`)
+            .follow 
+                img(src=`${_static('data/image/lion/follow.gif')}`)
+    script(type="text/template",id="no-more-data-html")
+        .no-more-data-html
+            span 到底啦
+    script(type="text/template",id="list-template").
+        {{#data}}
+            <a class="item" href="{{prodUrl}}"> 
+                <div class="img">
+                    <img src="{{imgUrl}}">
+                    {{#largeColumn}}
+                    <div class="large-column">
+                        <div class="looked">{{looked}}</div>
+                        <div class="fabulous">{{fabulous}}</div>
+                        <div class="comment">{{comment}}</div>
+                    </div>
+                    {{/largeColumn}}
+                    {{#smallColumn}}
+                    <div class="durationTime">{{durationTime}}</div>
+                    {{/smallColumn}}
+                </div>
+                <div class="detail-text">{{detailText}}</div>
+            </a>
+        {{/data}} 
+append script
+    script(src=`${_static('script/entry/lion/home.js')}`)

@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.#{$namespace}mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity .2s ease 0s;
+    &.opened {
+        opacity: 1;
+    }
+    &.closed {
+        z-index: -100;
+    }
+}

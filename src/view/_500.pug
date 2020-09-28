@@ -1,0 +1,16 @@
+extends /_unit/base.pug
+
+
+append data
+    -   var pageTitle = '服务发生错误'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/500.scss')}`)
+
+
+block pageContent
+    main.page-content
+        pre.error #{stack}
+
+append script
+    script(src=`${_static('script/entry/500.js')}`)

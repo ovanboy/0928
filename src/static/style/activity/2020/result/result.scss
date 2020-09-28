@@ -1,0 +1,35 @@
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+} 
+.page-content{
+  background-color: #fff;
+  text-align: center;
+}
+.mainbg{
+  height: 198px;
+  margin: 38px 0 25px 0;
+}
+.access{
+  background:#fff url("/style/_asset/image/activity/2020/result/access.png") 50% 0/345px 198px no-repeat ;
+}
+.tab{
+  font-size: 17px;
+  color: #444444;
+}
+.info{
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 35px;
+  line-height: 30px;
+}
+.btn{
+  border: 1px solid #4586FF;
+  border-radius: 22px;
+  width: 130px;
+  height: 40px;
+  font-size: 15px;
+  color: #4586FF;
+  background-color: #fff
+}

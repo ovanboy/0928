@@ -1,0 +1,73 @@
+// UI3.0
+
+
+// variable ==================================================================
+
+// 命名前缀
+$namespace: 'ui-';
+
+
+// 页面背景色
+$pageBgColor: #f4f6f8;
+
+// 线条颜色
+$lineColor: #e8e8e8;
+
+// 主色
+$primaryColor: #4586ff;
+$primaryActiveColor: #2F71EB;
+
+// 页面字体
+$font: "PingFang SC", "Source Han Sans CN", Tahoma, Arial, sans-serif;
+
+// 金额字体
+$amountFont: "DIN Alternate", "Roboto", Tahoma, Arial, sans-serif;
+
+
+
+
+
+
+// mixin =====================================================================
+
+// 清浮动
+@mixin clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// 文本超出显示"..."
+@mixin ellipsis($lineNum: 1){
+	@if $lineNum == 1 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}@else {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: $lineNum;
+		-webkit-box-orient: vertical;
+	}
+}
+
+// 元素居中对齐
+// @mixin center($x: true, $y: true){
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// 	transform: translate3d(-50%,-50%,0);
+// 	transform-origin: center center;
+// }
+
+// // 线条
+// @mixin line($pos, $type: before, $top: 0, $right: 0, $bottom: 0, $left: 0, $width: 1px, $color: $lineColor){
+// 	position: relative;
+// 	@if $pos == top {}
+// }

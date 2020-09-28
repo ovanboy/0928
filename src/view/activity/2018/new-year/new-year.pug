@@ -1,0 +1,80 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '元旦快乐'
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2018/new-year/new-year.scss')}`)
+block pageHeader
+
+block pageContent
+    main.page-content
+        .wrapper
+            .name-msg 
+                .line-before.line
+                span#invite 买单吧
+                span 邀请您
+                .line-after.line
+            .title-mg
+                .prezent-msg 
+                    span 新年新开始，买单吧新户享
+                    span.mark-msg 38元
+                    | 大礼包
+            button#send-btn.act-btn 我要送礼
+            button#receive-btn.act-btn 我要领奖
+            button#send-qy-btn.act-btn 传递祝福给亲友
+        .pop-name.hide
+            .pop-float2
+                .img-give
+                .your-name 您的名字
+                .input-box
+                    input.input-name(placeholder="请输入您的名字" type="text" maxlength="6")
+                .err-text-name 请输入您的名字
+                .button-center
+                    btn#give-btn 送祝福
+                    btn#img-btn 生成图片
+                .text-newuser 新户立享38元大礼包，内含10元话费,仅限建行信用卡绑卡用户
+                .img-present
+            .pop-float3
+        .pop-number.hide
+            .pop-float2
+                .img-receive
+                .input-box
+                    input.input-number(placeholder="请输入您的11位手机号" type="tel" maxlength="11")
+                .err-text 请输入正确的手机号
+                .button-center
+                    btn#receive-btn2 立即领取
+                .text-newuser 新户立享38元大礼包，内含10元话费,仅限建行信用卡绑卡用户
+                .img-present
+            .pop-float3
+        .pop-dowload.hide
+            .pop-float2
+                .img-narrate
+                .btn-box
+                    #continue-btn-outer 
+                        #continue-btn 继续送祝福
+                    button#dowload-btn
+                        a(href="#") 下载买单吧
+            .pop-float3
+        .footer 兴业银行信用卡 | 买单吧出品
+        .shadow-mask
+        .img-share
+        .share-box(style="display: none;")
+            .close-btn
+            .note-msg 请长按图片保存至手机相册
+            img#imgpic
+        .qrcode
+        .share-img-box
+            .share-img
+                .share-name-msg
+                    .line-before.line
+                    span#share-name 买单吧
+                    span 邀请您
+                    .line-after.line
+                .share-text-box
+                    .share-text
+                        span 新年新开始，买单吧新户享
+                        span.share-msg 38元
+                        | 大礼包
+
+append script
+    script(src=`${_static('script/entry/activity/2018/new-year/new-year.js')}`)

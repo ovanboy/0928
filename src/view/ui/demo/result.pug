@@ -1,0 +1,21 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '提交结果/状态页面'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/result.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .state-icon.fail
+        .state-name 提交失败
+        .state-desc 自动赔付相关文案自动赔付相关文案自动赔付相关文案自动赔付相关文案自
+        .action-box
+            button.ui-btn.block.primary 完成
+
+
+block script

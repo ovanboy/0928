@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+.#{$namespace}tips-wrapper {
+	position: absolute;
+	z-index: 10;
+	left: 15px;
+	right: 15px;
+	opacity: 0;
+	transition: opacity .3s ease 0s;
+	.#{$namespace}tips {
+		position: absolute;
+		min-width: 80px;
+		//height: 40px;
+		line-height: 24px;
+		max-width: 100%;
+		padding: 8px 22px; 
+		background-color: rgba(0,0,0,.7);
+		border-radius: 6px;
+		//box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);
+		color: #ffffff;
+		font-size: 14px;
+	}
+	.#{$namespace}tips-arrow {
+		position: absolute;
+		z-index: 1;
+		border-width: 10px;
+		border-style: solid;
+	}
+	&.top {
+		.#{$namespace}tips {
+			bottom: 0;
+		}
+		.#{$namespace}tips-arrow {
+			bottom: -20px;
+			border-color: rgba(0,0,0,.7) transparent transparent;
+		}
+	}
+	&.bottom {
+		.#{$namespace}tips {
+			top: 0;
+		}
+		.#{$namespace}tips-arrow {
+			top: -20px;
+			border-color: transparent transparent rgba(0,0,0,.7);
+		}
+	}
+	&.closed {
+		z-index: -1;
+	}
+	&.opened {
+		opacity: 1;
+	}
+}

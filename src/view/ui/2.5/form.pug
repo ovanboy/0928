@@ -1,0 +1,63 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '表单元素组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/form.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-gap 单选框（ui-radio）
+        .ui-panel
+            .ui-form-item
+                input.ui-radio(type="radio")
+                | .ui-radio
+            .ui-form-item
+                input.ui-radio(type="radio",checked=true)
+                | .ui-radio[checked]
+            .ui-form-item
+                input.ui-radio(type="radio",disabled=true)
+                | .ui-radio[disabled]
+            .ui-form-item
+                input.ui-radio(type="radio",disabled=true,checked=true)
+                | .ui-radio[disabled][checked]
+            .ui-form-item
+                input.ui-radio(type="radio",name="field-a")
+            .ui-form-item
+                input.ui-radio(type="radio",name="field-a")
+            .ui-form-item
+                input.ui-radio(type="radio",name="field-a")
+            .ui-form-item
+                input.ui-radio(type="radio",name="field-a")
+        .ui-gap 复选框（ui-checkbox）
+        .ui-panel
+            input.ui-checkbox(type="checkbox",disabled=true,checked=true)
+            | .ui-checkbox.radio
+            input.ui-checkbox(type="checkbox",checked=true)
+            input.ui-radio(type="radio",disabled=true,checked=true)
+            input.ui-radio(type="radio",name="demo",checked=true)
+            input.ui-radio(type="radio",name="demo")
+            input.ui-radio(type="radio",name="demo")
+            input.ui-radio(type="radio",name="demo")
+        .ui-gap 开关按钮（ui-switch-btn）
+        .ui-panel
+            .ui-form-item
+                input.ui-switch-btn(type="checkbox")
+                | .ui-switch-btn
+            .ui-form-item
+                input.ui-switch-btn(type="checkbox",checked=true)
+                | .ui-switch-btn[checked]
+            .ui-form-item
+                input.ui-switch-btn(type="checkbox",disabled=true)
+                | .ui-switch-btn[disabled]
+            .ui-form-item
+                input.ui-switch-btn(type="checkbox",disabled=true,checked=true)
+                | .ui-switch-btn[disabled][checked]
+        .ui-panel
+            input#test-input(type="text")
+            button#clean-btn 清空
+            button#complete-btn 完成
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/form.js')}`)

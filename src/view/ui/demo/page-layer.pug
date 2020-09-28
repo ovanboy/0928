@@ -1,0 +1,99 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '页面层组件'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/module_page-layer.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/page-layer.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#page-layer-btn.ui-btn.bigger.primary.block 页面弹层
+        //- .ui-panel.content-btn-panel.bigger
+        //-     button#pay-btn.ui-btn.bigger.primary.block 支付确认弹层
+
+        //- pay
+        script#page-layer-content(type="text/template")
+            .pay-layer
+                .pay-info
+                    | 实付金额(元)
+                    br
+                    em.price 8.30
+                .ui-form-item.ui-select-item(data-action="cards")
+                    input.ui-form-value-input(type="hidden",name="fieldname")
+                    .ui-form-item-label 支付方式
+                    .ui-form-item-cont 兴业银行信用卡 尾号6985
+                //- label.ui-form-item.ui-switch-item
+                //-     .ui-form-item-label 使用积分
+                //-     .ui-form-item-cont
+                //-         input.ui-switch-btn(type="checkbox",data-dom="jifen-switch")
+                label.jf-fen-switch-wrapper(data-dom="jifenSwitchBtn")
+                    .switch-info
+                        .switch-label 使用积分
+                        .disabled-tips 
+                            | 此卡不支持积分支付
+                            a(href="javascript:;") 查看详情&gt;
+                    //- input.ui-switch-btn(type="checkbox",data-dom="jifen-switch")
+                    span.ui-switch
+                        input(type="checkbox",data-dom="jifen-switch")
+                        span
+                //- label.jf-fen-switch-wrapper.disabled
+                //-     .switch-info
+                //-         .switch-label 使用积分
+                //-         .disabled-tips 
+                //-             | 此卡不支持积分支付
+                //-             a(href="javascript:;") 查看详情&gt;
+                //-     input.ui-switch-btn(type="checkbox",disabled=true)
+                .ui-form-item.ui-select-item(data-dom="jifenBtn",data-action="accumulatePoints")
+                    .ui-form-item-label 积分抵扣
+                    .ui-form-item-cont 使用2800积分，抵扣￥4.20
+                .pay-action-box
+                    button.ui-btn.bigger.primary.block 确认支付
+        script#pay-layer-cards-content(type="text/template")
+            .pay-cards-panel
+                ul.ui-option-list.pay-card-list(data-multiple="1",data-required=true)
+                    li.selected(data-value="001")
+                        img.card-logo(src=`${_static('data/image/acs/mei-ri-fu-li/ji-fen.png')}`)
+                        .card-info
+                            .base 兴业银行信用卡 尾号2135
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="002")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2136
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="003")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2137
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="004")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2138
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="005")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2139
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="006")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2140
+                            .desc 此付款方式不支持当前交易
+                    li.disabled(data-value="007")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2141
+                            .desc 此付款方式不支持当前交易
+                a.add-card(href="javascript:;")
+                    span.btn-text 添加银行卡
+
+append script
+    script(src=`${_static('script/entry/ui/demo/page-layer.js')}`)

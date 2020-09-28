@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+
+$namespace: null !default;
+
+
+.#{$namespace}btn {
+    $bg: #F0F1F7;
+    $fg: #4586FF;
+    $bg-active: #D1DAEB;
+    $fg-active: #4586FF;
+    $bg-disabled: #E0E0E0;
+    $fg-disabled: #C2C2C2;
+    $fg-main: #FFFFFF;
+
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin: 0; //For mobile button input[type=button]
+    padding: 13px 15px;
+    background-color: $bg;
+    background-clip: padding-box;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0;
+    border-radius: 7px;
+    transition: all .2s linear 0s;
+    text-align: center;
+    text-decoration: none;
+    line-height: 18px;
+    color: $fg;
+    font-size: 15px;
+    font-family: $font; // for button element
+    font-weight: bold;
+    @include ellipsis();
+    
+    // 相对尺寸
+    // &.bigger {
+    //     padding: 15px 14px;
+    //     font-weight: bold;
+    // }
+    &.smaller {
+        font-size: 12px;
+        min-width: 64px;
+        padding: 5px 15px;
+        border-radius: 3px;
+    }
+
+    // 状态
+    &:active,
+    &.active {
+        background-color: $bg-active;
+        color: $fg-active;
+    }
+    &:disabled,
+    &.disabled {
+        background-color: $bg-disabled;
+        color: $fg-disabled;
+    }
+
+    // 语义
+    &.primary {
+        color: $fg-main;
+        background-color: transparent;
+        background-image: linear-gradient(135deg, #4CA9FF 0%, #2E7BFF 100%);
+        &:active,
+        &.active {
+            color: $fg-main;
+            background-color: transparent;
+            background-image: linear-gradient(135deg, #4297F2 0%, #286FF2 100%);
+        }
+        &:disabled,
+        &.disabled {
+            color: $fg-disabled;
+            background-color: $bg-disabled;
+            background-image: none;
+        }
+    }
+
+
+    // 风格
+    // 线框按钮
+    &.outlined {
+        padding: 12px 14px;
+        background-image: none;
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $fg;
+        color: $fg;
+        &.smaller {
+            padding: 4px 14px;
+        }
+        &:active,
+        &.active {
+            background-image: none;
+            background-color: transparent;
+            border-color: #2F71EB;
+            color: #2F71EB;
+        }
+        &:disabled,
+        &.disabled {
+            background-image: none;
+            background-color: transparent;
+            border-color: $bg-disabled;
+            color: $fg-disabled;
+        }
+    }
+    // 块级按钮
+    &.block {
+        display: block;
+        width: 100%;
+    }
+    // 圆边按钮
+    &.round {
+        border-radius: 1000px;
+    }
+
+}
+
+input.#{$namespace}btn[type="button"],
+input.#{$namespace}btn[type="submit"],
+input.#{$namespace}btn[type="reset"], {
+    -webkit-appearance: button;
+}
+

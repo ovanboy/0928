@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+$namespace: null !default;
+
+
+// 单选框
+// span.#{$namespace}radio
+//     input(type="radio")
+//     span
+.#{$namespace}radio {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        opacity: 0;
+        & + span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-color: #fff;
+            border: 1px solid #CFCFCF;
+            border-radius: 50%;
+            transform: scale(.5);
+            transform-origin: left top;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0%;
+                height: 0%;
+                background-color: #3E73FF;
+                border-radius: 50%;
+                transform: translate(-50%,-50%);
+                transition: width .2s ease 0s, height .2s ease 0s;
+            }
+        }
+        &:checked + span {
+            &:after {
+                width: 66%;
+                height: 66%;
+            }
+        }
+        &:disabled + span {
+            background-color: #fafafa;
+            border-color: #e8e8e8;
+        }
+        &:disabled:checked + span {
+            &:after {
+                background-color: #CFDCFF;
+            }
+        }
+    }
+}
+
+
+
+// 复选框
+// span.#{$namespace}checkbox
+//     input(type="checkbox")
+//     span
+.#{$namespace}checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        opacity: 0;
+        & + span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-color: #fff;
+            border: 1px solid #CFCFCF;
+            border-radius: 50%;
+            transform: scale(.5);
+            transform-origin: left top;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0%;
+                height: 0%;
+                background-color: #3E73FF;
+                border-radius: 50%;
+                transform: translate(-50%,-50%);
+                transition: width .2s ease 0s, height .2s ease 0s;
+            }
+        }
+        &:checked + span {
+            &:after {
+                width: 66%;
+                height: 66%;
+            }
+        }
+        &:disabled + span {
+            background-color: #fafafa;
+            border-color: #e8e8e8;
+        }
+        &:disabled:checked + span {
+            &:after {
+                background-color: #CFDCFF;
+            }
+        }
+    }
+}
+
+
+// 开关按钮
+// span.#{$namespace}switch
+//     input(type="checkbox")
+//     span
+.#{$namespace}switch {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 51px;
+    height: 31px;
+    input[type="checkbox"] {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        opacity: 0;
+        & + span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-color: #fff;
+            border: 3px solid #e8e8e8;
+            border-radius: 1000px;
+            transition: background-color .2s ease-in-out 0s, border-color .2s ease-in-out 0s;
+            transform: scale(.5);
+            transform-origin: left top;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 56px;
+                height: 56px;
+                background-color: #fff;
+                border: 2px solid #D1D1D1;
+                border-radius: 1000px;
+                box-shadow: 0 4px 4px 0 rgba(0,0,0,0.18);
+                transition: left .2s ease-in-out 0s, border-color .2s ease-in-out 0s;
+            }
+        }
+        &:checked + span {
+            background-color: #4586FF;
+            border-color: #4586FF;
+            &:before {
+                border-color: #386DD1;
+                left: 40px;
+            }
+        }
+        &:disabled + span {
+            background-color: #fafafa;
+            border-color: #f0f0f0;
+            &:before {
+                background-color: #fff;
+                border-color: #e8e8e8;
+                box-shadow: 0 3px 3px 0 rgba(0,0,0,0.1);
+            }
+        }
+        &:checked:disabled + span {
+            background-color: #CFDCFF;
+            border-color: #CFDCFF;
+            &:before {
+                background-color: #fafafa;
+                border-color: #BfCCFF;
+            }
+        }
+    }
+}
+

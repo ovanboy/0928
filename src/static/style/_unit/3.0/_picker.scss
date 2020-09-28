@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+
+.#{$namespace}picker {
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative;
+    height: 234px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    * {
+        box-sizing: border-box;
+    }
+}
+.#{$namespace}picker-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-mask-box-image: linear-gradient(to bottom, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+}
+.#{$namespace}pciker-current-row {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    margin-top: -32px;
+    padding: 0px;
+    width: 100%;
+    height: 64px;
+    &.bg {
+        z-index: 0;
+        background-color: #F9FAFF;  
+    }
+    &.fg {
+       z-index: 2; 
+    }
+}
+.#{$namespace}pciker-list {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 50%;
+    margin-top: -32px;
+    padding: 0px;
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+        color: #888;
+        padding: 0px 8px;
+        white-space: nowrap;
+        -webkit-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: default;
+        visibility: hidden;
+        &.visible {
+            visibility: visible;
+        }
+        &.highlight {
+            visibility: visible;
+            // height: 48px;
+            // line-height: 48px;
+            font-size: 20px;
+            color: #333333;
+        }
+        
+    }
+}

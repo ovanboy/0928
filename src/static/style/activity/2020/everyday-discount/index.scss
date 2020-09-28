@@ -1,0 +1,320 @@
+.page-content {
+  background-image: linear-gradient(-45deg, #B5DBFF 0%, #0089D7 100%);
+}
+a {
+  text-decoration: none;
+}
+.main-background {
+  position: relative;
+  padding-top: 128px;  
+  background-image:  url("/style/_asset/image/activity/2020/everyday-discount/main-background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 195px;
+  height: 195px;
+  width: 100%;
+  text-align: center;
+  .title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 50px;
+  }
+  .time {
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .rule {
+    padding: 5px 5px 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    line-height: 17px;
+    font-size: 12px;
+    color: #0286D5;
+    background: #F4F8F6;
+    border-radius: 100px 0 0 100px;
+    .inner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      height: 27px;
+      width: 63px;
+      background:rgba(0,0,0,.2);
+      border-radius: 100px 0 0 100px;    
+    }
+    .show {
+      display: block;
+    }
+  }
+}
+.main-countent {
+  position: relative;
+  padding: 0 15px;
+}
+.content-box {
+  margin-top: -10px;
+  background: #fff;
+  box-shadow: 0 4px 20px 0 rgba(109,123,70,0.15);
+  border-radius: 7px;
+  padding: 15px;
+  .notice {
+    font-weight: bold;
+    font-size: 13px;
+    color: #0286D5;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .discount-content {
+    margin: 15px 0  10px 0;
+    display: flex;
+    text-align: center;
+    
+    
+    .discount-number {
+      margin-left: 10px;
+      .unbind {
+        margin-top: 20px;
+        color: #666;
+        font-size: 15px;
+      }
+      .already-discount {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #444;
+        .yuan {
+          font-size: 15px;
+        }
+        .number {
+          font-size: 26px;
+        }
+      }
+      .can-discount {
+        margin-top: 23px;
+        font-weight: bold;
+        color: #FF7919;
+        .yuan {
+          font-size: 15px;
+        }
+        .number {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  .remain-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4F8F6;
+    border-radius: 7px;
+    height: 66px;
+    margin-bottom: 10px;
+    padding: 15px;
+    color: #000;
+    .left-content {
+      vertical-align: middle;
+      display: inline-block;
+      font-weight: bold;
+      flex-shrink: 0;
+      .today-remain {
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 20px;
+      }
+      .deadline {
+        font-weight: normal;
+        font-size: 12px;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 20px;
+      }
+    }
+    .right-content{
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 10px;
+      span {
+        font-weight: bold;
+        background: #fff;
+        border: 1px solid #0286D5;
+        border-radius: 7px;
+        font-size: 22px;
+        color: #444;
+        padding: 6px 5px 4px;
+        margin-left: 5px;
+      }
+    }
+
+  }
+  .button-bind {
+    padding: 10px 15px;
+    text-align: center;
+    height: 62px;
+    background-image: linear-gradient(-26deg, #1E7DE3 0%, #4CA9FF 95%, #31B9EB 95%, #4CA9FF 95%);
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 7px;
+    box-shadow: 0 3px 0 0 #316fd6;
+    div {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  // .button-bind-card {
+  //   height: 47px;
+  //   background-image:  url("/style/_asset/image/activity/2020/everyday-discount/bind-card.png");
+  // }
+  // .button-discount {
+  //   height: 47px;
+  //   background-image:  url("/style/_asset/image/activity/2020/everyday-discount/discount.png")
+  // }
+  // .button-receive {
+  //   height: 47px;
+  //   background-image:  url("/style/_asset/image/activity/2020/everyday-discount/receive.png")
+  // }
+  // .button-bind-yunsanfu {
+  //   margin-top: 10px;
+  //   height: 47px;
+  //   background-image:  url("/style/_asset/image/activity/2020/everyday-discount/bind-yunshanfu.png")
+  // }
+  .button {
+    position: relative;
+    // width: 100%;
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      height: 100%;
+      width: 100%;
+      background:rgba(0,0,0,.2);
+      border-radius: 6px;
+    }
+    .show {
+      display: block;
+    }
+  }
+
+  .btn-normal {
+    padding: 15px 0 15px 0;
+    text-align: center;
+    background-image: linear-gradient(-26deg, #1E7DE3 0%, #4CA9FF 95%, #31B9EB 95%, #4CA9FF 95%);
+    border-radius: 7px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 3px 0 0 #316fd6;
+    line-height: 15px;
+  }
+
+  .btn-normal-white {
+    margin-top: 10px;
+    text-align: center;
+    background: #fff;
+    padding: 15px 0 15px 0;
+    border: 1px solid #0286D5;
+    border-radius: 7px;
+    color: #0286D5;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+  }
+
+  .tomorrow-discount {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999999;
+    letter-spacing: 0;
+    text-align: center;
+  }
+}
+
+.content-box-bottom {
+  margin-top: 37px;
+  background: #fff;
+  box-shadow: 0 4px 20px 0 rgba(109,123,70,0.15);
+  border-radius: 7px;
+  padding: 15px;
+  .activity-title {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 50px;
+      background:  url("/style/_asset/image/activity/2020/everyday-discount/line-left.png") no-repeat;
+      background-size: 100% auto;
+      top: 10px;
+      margin-left: -60px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 50px;
+      background:  url("/style/_asset/image/activity/2020/everyday-discount/line-right.png") no-repeat;
+      background-size: 100% auto;
+      top: 10px;
+      margin-left: 10px;
+    }
+  }
+  .activity-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+    line-height: 22px;
+  }
+  .table {
+    margin-top: 15px;
+    border-collapse: collapse;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+  table,th,td{
+    border: 1px solid #ccc;
+  }
+  th{
+    width: 25%;
+    color: #000;
+  }
+  td {
+    color: #333;
+  }
+  tr {
+    height: 44px;
+  }
+  .orange {
+    color: #FF7919;
+  }
+  .table-background {
+    background: #fafafa;
+  }
+}
+
+.banner-box {
+  padding: 10px 0 35px;
+  .banner {
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 10px;
+  }
+}

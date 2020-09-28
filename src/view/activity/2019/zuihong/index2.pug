@@ -1,0 +1,116 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zuihong/index2.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .zh-index
+            .bg-holder
+                .lottie
+            .panel-intro
+                .stripe.stripe-left
+                .stripe.stripe-right
+                a.rule(href="#1") 
+                .panel-content
+                    .text 持卡人成功注册2020年上半年最红星期五（加油和超市）活动，且上月消费满3000元，可于1月10日当天享翻倍秒减优惠，最高可秒减100%，封顶500元。
+                    img.signup(src=`${_static('data/image/zuihong/signup.png')}`) 
+                    .broadcast 您已满足达标条件，立刻注册即可享受优惠！
+                    .links
+                        a(href="#1") 
+                            img(src=`${_static('data/image/zuihong/act1.png')}`)
+                        a(href="#1") 
+                            img(src=`${_static('data/image/zuihong/act2.png')}`)
+                        a(href="#1") 
+                            img(src=`${_static('data/image/zuihong/act3.png')}`)
+            .panel.panel-current-month
+                .stripe.stripe-right
+                .panel-title 周五揭晓：？倍
+                .panel-content
+                    .lg.lg1
+                    .lg.lg2
+                    .lg.lg3
+                    .wrapper
+                        .info
+                            img(src=`${_static('data/image/zuihong/unqualified.png')}`)
+                            p 恭喜！您已获得翻倍秒减优惠资格！别忘了<span style="color:#F92A2B">1月10日</span>前往活动加油站、超市和便利店消费享优惠，最低双倍秒减，最高10倍秒减暴击！秒减成功即可在本页面查看翻倍情况。
+            .panel.panel-current-month
+                .stripe.stripe-right
+                .panel-title 周五揭晓：10倍
+                .panel-content
+                    .lg.lg1
+                    .lg.lg2
+                    .lg.lg3
+                    .wrapper
+                        .info
+                            p 恭喜您获得今日加油超市秒减比例<span style="color:#F92A2B">30</span>%，便利店秒减比例<span style="color:#F92A2B">20</span>%
+                        .pie(max=50,current=10)
+                            canvas
+                            .pie-content
+                                .range
+                                    .min 0
+                                    .max 50
+                                .detail 本周已使用<br><span>￥<b>10</b>.00</span><br>周优惠额度50元
+            .panel.panel-current-month
+                .stripe.stripe-right
+                .panel-title 十周年翻倍减
+                .panel-content
+                    .lg.lg1
+                    .lg.lg2
+                    .lg.lg3
+                    .wrapper
+                        .info
+                            img(src=`${_static('data/image/zuihong/unqualified.png')}`)
+                            p 很抱歉，您上月的交易金额（扣除退货和优惠）为XX元。未满足3000元，无法获得秒减额度。快来争取下月秒减权益吧！
+
+    script(type="text/template",id="tpl-success")
+        .zh-layer-content.success
+            img.img(src=`${_static('data/image/zuihong/lion-success.png')}`)
+            .state 恭喜注册成功
+            .btns
+                a.btn.btn-red(href="#2",action="layer-close") 好的
+    script(type="text/template",id="tpl-fail")
+        .zh-layer-content.fail
+            img.img(src=`${_static('data/image/zuihong/lion-fail.png')}`)
+            .state 很遗憾，注册失败
+            .btns
+                a.btn.btn-red(href="#2",action="layer-close") 关闭
+    script(type="text/template",id="tpl-card")
+        .zh-layer-content.card
+            img.img(src=`${_static('data/image/zuihong/lion-card.png')}`)
+            .state 请先绑定兴业银行信用卡
+            .btns
+                a.btn(href="#2",action="layer-close") 关闭   
+                a.btn.btn-red(href="#2") 立即绑卡
+    script(type="text/template",id="tpl-invalid")
+        .zh-layer-content.invalid
+            img.img(src=`${_static('data/image/zuihong/lion-fail.png')}`)
+            .state 抱歉，您名下卡片暂不支持本活动，<br>建议办理其他兴业银行信用卡
+            .ps 注：分期信用卡、Boss卡、EMV卡不可参加
+            .btns
+                a.btn(href="#2",action="layer-close") 关闭
+                a.btn.btn-red(href="#2") 立即绑卡
+    script(type="text/template",id="tpl-invalid2")
+        .zh-layer-content.invalid
+            img.img(src=`${_static('data/image/zuihong/lion-fail.png')}`)
+            .state 抱歉，本活动仅限建行信用卡持卡用户，<br>现在办卡加入最红狂欢
+            .ps 注：分期信用卡、Boss卡、EMV卡不可参加
+            .btns
+                a.btn(href="#2",action="layer-close") 关闭
+                a.btn.btn-red(href="#2") 立即绑卡
+
+
+
+
+
+
+        
+
+
+append script
+    script(src=`${_static('script/entry/zuihong/index2.js')}`)

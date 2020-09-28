@@ -1,0 +1,37 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    script(src=`${_static('script/entry/bbt/rem.js')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/bbt/bbt-home.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .bbt-home
+            .times 
+                .text 今天还有<span>3</span>次寻宝机会
+            .notice 机会当日有效哦
+            .box 
+                img.box-img(src=`${_static('data/image/bbt/box.png')}`)
+                .box-ani
+            button.open-box
+            .link
+                a.rule
+                    i
+                    span 活动规则
+                a.mybox
+                    i
+                    span 我的宝箱
+    script(type="text/template",id="template-point")
+        
+
+
+
+
+
+append script
+    script(src=`${_static('script/entry/bbt/bbt-home.js')}`)

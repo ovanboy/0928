@@ -1,0 +1,66 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '加密键盘'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('public/keyboard/keyboard.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('public/keyboard-pc/keyboard-pc.scss')}`)
+
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/keyboard.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .ui-gap 内容块
+        .ui-panel
+            .contenty-block
+        .ui-gap 内容块
+        .ui-panel
+            .contenty-block
+        .ui-gap 测试表单
+        .ui-panel
+            .form-item
+                input.input-box(type="text",maxlength="6",placeholder="原生表单 文本类型 最大长度6")
+            .form-item
+                input.input-box(type="number",maxlength="6",placeholder="原生表单 数字类型 最大长度6")
+            .form-item
+                .h5-keyboard-input.security-keyboard-input-box(data-name="pwd",data-source-name="test",data-maxlength="6",data-placeholder="6位字符") 6位字符
+            .form-item
+                .h5-keyboard-input.security-keyboard-input-box(data-type="number",data-source-name="test",data-name="repwd",data-maxlength="6",data-placeholder="6位数字") 6位数字
+            .form-item
+                .h5-keyboard-input.security-keyboard-input-box(data-name="pwd",data-source-name="demo",data-maxlength="6",data-placeholder="6位字符") 6位字符
+            .form-item
+                .h5-keyboard-input.security-keyboard-input-box(data-type="number",data-name="repwd",data-source-name="demo",data-maxlength="6",data-placeholder="6位数字") 6位数字
+            .form-item
+                .pc-keyboard-input1.pc-keyboard-input.security-keyboardPC-input-box(style="height: 50px;padding: 5px;line-height: 40px;", data-name="password",data-val="",data-source-name="PC-demo",data-placeholder="pc安全键盘",data-maxlength="10") pc安全键盘
+            .form-item
+                .pc-keyboard-input2.pc-keyboard-input.security-keyboardPC-input-box(style="height: 50px;padding: 5px;line-height: 40px;", data-name="repassword",data-val="",data-source-name="PC-demo",data-placeholder="pc安全键盘",data-maxlength="10") pc安全键盘
+            //- .form-item
+            //-     .h5-keyboard-input.security-keyboard-input-box(data-type="number",data-name="repwd",data-source-name="test",data-maxlength="6",data-placeholder="6位数字") 6位数字
+        .ui-gap
+        .ui-panel
+            .action-box
+                .half-width-btn-container
+                    .sub-container
+                        button#btn-clean.ui-btn.primary.block.bigger H5清空输入框
+                    .sub-container
+                        button#btn-clean-pc.ui-btn.primary.block.bigger PC清空输入框
+                .half-width-btn-container
+                    .sub-container
+                        button#btn-open-pc.ui-btn.primary.block.bigger 打开pc安全键盘
+                    .sub-container
+                        button#btn-match-pc.ui-btn.primary.block.bigger 比较pc安全键盘内容相等
+                button#btn-open.ui-btn.primary.block.bigger 打开5秒后自动关闭
+                button#btn-pay.ui-btn.primary.block.bigger 支付
+
+block other
+
+append script
+    script(src=`${_static('script/entry/ui/demo/keyboard.js')}`)
+//- block script
+//-     script(src=`${_static('public/jquery/jquery.min.js')}`)
+//-     script(src=`${_static('script/module/keyboard.js')}`)
+//-     script(src=`${_static('script/entry/ui/keyboard.js')}`)

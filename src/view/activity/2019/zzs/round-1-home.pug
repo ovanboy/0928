@@ -1,0 +1,71 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zzs/round-1-home.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .round-home   
+            img.round-logo(src=`${_static('data/image/zzs/round-1.png')}`)
+            img.round-home-title(src=`${_static('data/image/zzs/home-title.png')}`)
+            a.rule 活动规则
+            .dateline
+                .dateline-bar.active
+                    .date-left 9.9
+                    .dateline-progress 
+                        .dateline-progress-inner(rate="40")
+                            .rest-day 剩余22天
+                    .date-right 10.6
+                .dateline-bar.unactive
+                    .date-left 9.9
+                    .dateline-progress 
+                    .date-right 10.6
+                    .text 第二轮 未开始
+            .award
+                .award-title 
+                    span 点击奖品查看详情
+                .award-list
+                    .award-item(awardid=1)
+                        section
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me 选我
+                    .award-item(awardid=2)
+                        section
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me 8号开选
+                    .award-item(awardid=3)
+                        section.got
+                            img(src=`${_static('data/image/zzs/award.png')}`)
+                        button.select-me(disabled) 选我
+            
+            .info
+                .info-item
+                    i.icon-select
+                    span 心仪奖品<b>三选一</b>，已获得奖品不能复选哦
+                .info-item
+                    i.icon-card
+                    span 每周刷<b>5笔¥168</b><span class="gray">（9月9日起的消费都将计入统计） </span>
+                .info-item
+                    i.icon-jifen
+                    span 刷满<b>任1周</b>瓜分<b>8亿积分</b>，先达先得
+                .info-item
+                    i.icon-gift
+                    span 刷满<b>任2周</b>，根据消费排名赢所选奖品
+    each index in [1,2,3]
+        script(type="text/template",id='award-template-'+index)
+            .award-detail
+                .award-detail-title 索尼PS4 Pro家用套装#{index}
+                .award-detail-subtitle 刷满2周且消费排名前1000可获得
+                img()
+                p 索尼官方直营 Sony PlayStation 4 PS4 slim 主机国行家用游戏机
+
+
+
+
+append script
+    script(src=`${_static('script/entry/zzs/round-1-home.js')}`)

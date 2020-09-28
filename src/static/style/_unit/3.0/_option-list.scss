@@ -1,0 +1,72 @@
+@charset "utf-8";
+.ui-option-list {
+  .ui-pop-layer-header {
+    .ui-pop-layer-action-btn {
+      &.close {
+        left: 0;
+      }
+      &.close.exchange-btn {
+        right: 0;
+        left: auto;
+      }
+      &.submit {
+        right: 0;
+        &.icon {
+          &:before {
+            background-image: url("/style/_asset/image/ui/3.0/icon-selected.png");
+          }
+        }
+      }
+      &.submit.exchange-btn {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}
+
+.ui-option-inner {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .ui-option-item {
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 0 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &.select {
+      background-color: #f9faff;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        background-image: url("/style/_asset/image/ui/3.0/icon-selected.png");
+        background-repeat: no-repeat;
+        background-size: 20px auto;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      width: 100%;
+      background: #e8e8e8;
+    }
+  }
+
+}
+

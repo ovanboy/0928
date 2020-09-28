@@ -1,0 +1,88 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '活动主页'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/new-customer/new-customer.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .banner
+            a(href="#1")
+                img(src=`${_static('data/image/new-customer/banner.png')}`)
+        .act
+            .act-name 活动名称活动名称活动名称活动名称名活动名称活动名称活动名称活动名称名
+            a.rule(href="#2") 活动规则
+        .gap
+            .gap-left 达标进度
+            .gap-right 达标截止日期2019.12.31
+        .panel
+            .title 
+                span 新户条件
+            .info
+                .info-item
+                    .label 核卡时间
+                    .state.active 已达标
+                .info-item
+                    .label 指定卡产品
+                    .state.active 已达标
+                .info-item
+                    .label 
+                        | 办卡渠道
+                        .alert 
+                            .pop 如部分办卡渠道已有新户礼，则不同时参与本活动。
+                    .state 未达标
+            .title 
+                span 消费条件
+            .intro 核卡日45天(含)内完成3笔168元(含)以上指定场景消费
+            .progress 
+                .state.active 1
+                //- .line 
+                .state 2
+                //- .line 
+                .state 3
+
+            .progress-text.active 未达标
+            .notice 达标进度有3个工作日的统计延迟哦，<a href="#3">消费明细</a>
+        .gap
+            .gap-left 新户福利区
+            .gap-right 领奖截止日期2019.12.31
+        .award
+            .award-item
+                .img
+                    img(src=`${_static('data/image/new-customer/a1.png')}`)
+                .title 奖品名称奖品名称奖品名称奖品名称奖品名称奖品名称奖品名称奖品名称奖品名称奖品名称
+                .footer
+                    a.btn 未达标
+            .award-item
+                .img
+                    img(src=`${_static('data/image/new-customer/a2.png')}`)
+                .title 奖品名称奖品名称奖品名称奖品名称奖品名称
+                .footer
+                    a.btn.active 立即换购
+            .award-item
+                .img
+                    img(src=`${_static('data/image/new-customer/a1.png')}`)
+                    .received 
+                        span 已领取
+                .title 奖品名称奖品名称奖品名称奖品名称奖品名称
+                .footer
+                    a.btn 已领取
+            .award-item
+                .img
+                    img(src=`${_static('data/image/new-customer/a2.png')}`)
+                .title 奖品名称奖品名称奖品名称奖品名称奖品名称
+                .footer
+                    a.btn.active 立即换购
+
+            
+
+        
+        
+
+
+append script
+    script(src=`${_static('script/entry/new-customer/new-customer.js')}`)

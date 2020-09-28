@@ -1,0 +1,191 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '弹出层组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/pop-layer.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#pop-layer-btn.ui-btn.bigger.primary.block 示例弹层
+            button#multiple-layer-btn.ui-btn.bigger.primary.block 多重弹层 
+        .ui-panel.content-btn-panel.bigger
+            button#pay-btn.ui-btn.bigger.primary.block 支付确认弹层
+            //- button#jifen-pay-btn.ui-btn.bigger.primary.block 积分支付弹层
+            button#pos-select-btn.ui-btn.bigger.primary.block 省市选择弹层
+
+        //- .ui-panel
+        //-     label.ui-form-item.ui-select-item
+        //-         input.ui-form-value-input(type="hidden",name="fieldname")
+        //-         .ui-form-item-label 支付方式
+        //-         .ui-form-item-cont 兴业银行信用卡 尾号6985
+        //-     label.ui-form-item.ui-switch-item
+        //-         .ui-form-item-label 使用积分
+        //-         .ui-form-item-cont
+        //-             input.ui-switch-btn(type="checkbox")
+        //-     label.ui-form-item.ui-switch-item
+        //-         .ui-form-item-label 使用积分
+        //-         .ui-form-item-cont
+        //-             input.ui-switch-btn(type="checkbox",disabled=true)
+        //-     label.ui-form-item.ui-select-item
+        //-         .ui-form-item-label 积分抵扣
+        //-         .ui-form-item-cont 使用2800积分，抵扣￥4.20
+
+        //- base
+        script#pop-layer-content(type="text/template")
+            .layer-cont.base
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="openPanel1") 打开panel1(向左)
+                    button.ui-btn.primary.block(data-action="openPanel2") 打开panel2(向上)
+                    button.ui-btn.primary.block(data-action="openPanel3") 打开panel3(向右)
+                    button.ui-btn.primary.block(data-action="openPanel4") 打开panel4(向下)
+        //- panel-1
+        script#panel-1(type="text/template")
+            .layer-cont.panel1
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="openPanel1") 打开panel1(向左)
+                    button.ui-btn.primary.block(data-action="openPanel2") 打开panel2(向上)
+                    button.ui-btn.primary.block(data-action="openPanel3") 打开panel3(向右)
+                    button.ui-btn.primary.block(data-action="openPanel4") 打开panel4(向下)
+        //- panel-2
+        script#panel-2(type="text/template")
+            .layer-cont.panel2
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="openPanel1") 打开panel1(向左)
+                    button.ui-btn.primary.block(data-action="openPanel2") 打开panel2(向上)
+                    button.ui-btn.primary.block(data-action="openPanel3") 打开panel3(向右)
+                    button.ui-btn.primary.block(data-action="openPanel4") 打开panel4(向下)
+        //- panel-3
+        script#panel-3(type="text/template")
+            .layer-cont.panel3
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="openPanel1") 打开panel1(向左)
+                    button.ui-btn.primary.block(data-action="openPanel2") 打开panel2(向上)
+                    button.ui-btn.primary.block(data-action="openPanel3") 打开panel3(向右)
+                    button.ui-btn.primary.block(data-action="openPanel4") 打开panel4(向下)
+        //- panel-4
+        script#panel-4(type="text/template")
+            .layer-cont.panel4
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="openPanel1") 打开panel1(向左)
+                    button.ui-btn.primary.block(data-action="openPanel2") 打开panel2(向上)
+                    button.ui-btn.primary.block(data-action="openPanel3") 打开panel3(向右)
+                    button.ui-btn.primary.block(data-action="openPanel4") 打开panel4(向下)
+
+
+        //- 多重弹层
+        script#multiple-layer-tpl(type="text/template")
+            .layer-cont
+                .content-btn-panel
+                    button.ui-btn.primary.block(data-action="msg") msg
+                    button.ui-btn.primary.block(data-action="dialog") dialog
+                    button.ui-btn.primary.block(data-action="layer") layer
+                    button.ui-btn.primary.block(data-action="pop-layer") pop-layer
+
+        //- pay
+        script#pay-layer-content(type="text/template")
+            .pay-layer
+                .pay-info
+                    | 实付金额(元)
+                    br
+                    em.price 8.30
+                .ui-form-item.ui-select-item(data-action="cards")
+                    input.ui-form-value-input(type="hidden",name="fieldname")
+                    .ui-form-item-label 支付方式
+                    .ui-form-item-cont 兴业银行信用卡 尾号6985
+                //- label.ui-form-item.ui-switch-item
+                //-     .ui-form-item-label 使用积分
+                //-     .ui-form-item-cont
+                //-         input.ui-switch-btn(type="checkbox",data-dom="jifen-switch")
+                label.jf-fen-switch-wrapper(data-dom="jifenSwitchBtn")
+                    .switch-info
+                        .switch-label 使用积分
+                        .disabled-tips 
+                            | 此卡不支持积分支付
+                            a(href="javascript:;") 查看详情&gt;
+                    input.ui-switch-btn(type="checkbox",data-dom="jifen-switch")
+                //- label.jf-fen-switch-wrapper.disabled
+                //-     .switch-info
+                //-         .switch-label 使用积分
+                //-         .disabled-tips 
+                //-             | 此卡不支持积分支付
+                //-             a(href="javascript:;") 查看详情&gt;
+                //-     input.ui-switch-btn(type="checkbox",disabled=true)
+                .ui-form-item.ui-select-item(data-dom="jifenBtn",data-action="accumulatePoints")
+                    .ui-form-item-label 积分抵扣
+                    .ui-form-item-cont 使用2800积分，抵扣￥4.20
+                .pay-action-box
+                    button.ui-btn.bigger.primary.block 确认支付
+        script#pay-layer-cards-content(type="text/template")
+            .pay-cards-panel
+                ul.ui-option-list.pay-card-list(data-multiple="1",data-required=true)
+                    li.selected(data-value="001")
+                        img.card-logo(src=`${_static('data/image/acs/mei-ri-fu-li/ji-fen.png')}`)
+                        .card-info
+                            .base 兴业银行信用卡 尾号2135
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="002")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2136
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="003")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2137
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="004")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2138
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="005")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2139
+                            .desc 此付款方式不支持当前交易
+                    li(data-value="006")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2140
+                            .desc 此付款方式不支持当前交易
+                    li.disabled(data-value="007")
+                        img.card-logo(src="")
+                        .card-info
+                            .base 兴业银行信用卡 尾号2141
+                            .desc 此付款方式不支持当前交易
+                a.add-card(href="javascript:;")
+                    span.btn-text 添加银行卡
+
+        //- position select
+        script#pos-layer-tpl(type="text/template")
+            .pos-layer-content
+                .pos-tab-title
+                    .title-item
+                        span 请选择
+                    .title-item.current
+                        span 请选择
+                    .title-item
+                        span 请选择
+                    .title-item
+                        span 请选择
+                    .title-item
+                        span 请选择
+                .pos-tab-cont
+                    .cont-item.current
+                        ul.pos-option-list
+                            li 内蒙古
+                            li 内蒙古
+                            li.selected 内蒙古
+                            li 内蒙古
+                    .cont-item
+                        ul.pos-option-list
+                            li 内蒙古
+                            li 内蒙古
+                            li.selected 内蒙古
+                            li 内蒙古
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/pop-layer.js')}`)

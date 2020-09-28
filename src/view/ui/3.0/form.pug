@@ -1,0 +1,101 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '表单元素组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/form.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-gap 单选框
+        .ui-panel
+            .form-item
+                .inner
+                    .label 可用非选中
+                    .cont
+                        label.cont-inner
+                            span.ui-radio
+                                input(type="radio")
+                                span
+            .form-item
+                .inner
+                    .label 可用已选中
+                    .cont
+                        label.cont-inner
+                            span.ui-radio
+                                input(type="radio",checked=true)
+                                span
+            .form-item
+                .inner
+                    .label 禁用非选中
+                    .cont
+                        label.cont-inner
+                            span.ui-radio
+                                input(type="radio",disabled=true)
+                                span
+            .form-item
+                .inner
+                    .label 禁用已选中
+                    .cont
+                        label.cont-inner
+                            span.ui-radio
+                                input(type="radio",disabled=true,checked=true)
+                                span
+            .form-item
+                .inner
+                    .label 单选框组
+                    .cont
+                        .cont-inner
+                            label.radio-item
+                                span.ui-radio
+                                    input(type="radio",name="radio-demo",value="01")
+                                    span
+                                | 选项1
+                            label.radio-item
+                                span.ui-radio
+                                    input(type="radio",name="radio-demo",value="02")
+                                    span
+                                | 选项2
+                            label.radio-item
+                                span.ui-radio
+                                    input(type="radio",name="radio-demo",value="03")
+                                    span
+                                | 选项3
+        .ui-gap 开关
+        .ui-panel
+            .form-item
+                .inner
+                    .label 可用已关闭
+                    .cont
+                        label.cont-inner
+                            span.ui-switch
+                                input(type="checkbox")
+                                span
+            .form-item
+                .inner
+                    .label 可用已开启
+                    .cont
+                        label.cont-inner
+                            span.ui-switch
+                                input(type="checkbox",checked=true)
+                                span
+            .form-item
+                .inner
+                    .label 禁用已关闭
+                    .cont
+                        label.cont-inner
+                            span.ui-switch
+                                input(type="checkbox",disabled=true)
+                                span
+            .form-item
+                .inner
+                    .label 禁用已开启
+                    .cont
+                        label.cont-inner
+                            span.ui-switch
+                                input(type="checkbox",disabled=true,checked=true)
+                                span
+
+append script
+    script(src=`${_static('script/entry/ui/3.0/form.js')}`)

@@ -1,0 +1,27 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '我是标题'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2018/moon-festival/receive-success.scss')}`)
+
+block pageHeader
+
+block pageContent
+    main.page-content.verticalCenter
+        .wishesAndSignatureCon
+            .wishesBg
+            .signature.verticalCenter
+                div.nameSpan
+                span 祝您
+                //span.line
+        .panelCon.verticalCenter
+
+            .adsCon
+            .buttonBar
+                button.actBtn1 继续送祝福
+                button.actBtn2 下载买单吧
+        .footerCon
+append script
+    script(src=`${_static('script/entry/activity/2018/moon-festival/receive-success.js')}`)

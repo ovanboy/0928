@@ -1,0 +1,18 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '活动名称'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/result/result.scss')}`)
+
+block pageContent
+    main.page-content
+        .mainbg.access
+        p 咦，你好像不是它们的客人
+        
+        p.info 可以去其他地方看看哟～
+        button.btn 返回
+        
+append script
+    script(src=`${_static('script/entry/activity/2020/result/result.js')}`)

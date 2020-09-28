@@ -1,0 +1,126 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '按钮组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/button.scss')}`)
+
+block pageContent
+    main.page-content
+        .content-btn-panel
+            button.ui-btn .btn
+            button.ui-btn.disabled(disabled=true) .btn:disabled
+        .content-btn-panel
+            button.ui-btn.primary .btn.primary
+            button.ui-btn.primary.disabled(disabled=true) .btn.primary:disabled
+        .content-btn-panel
+            button.ui-btn.orange .btn.orange
+            button.ui-btn.orange.disabled(disabled=true) .btn.orange:disabled
+        .content-btn-panel
+            button.ui-btn.red .btn.red
+            button.ui-btn.red.disabled(disabled=true) .btn.red:disabled
+        //- .content-btn-panel
+        //-     button.ui-btn.warning .btn.warning
+        //-     button.ui-btn.warning.disabled(disabled=true) .btn.warning:disabled
+        //- .content-btn-panel
+        //-     button.ui-btn.danger .btn.danger
+        //-     button.ui-btn.danger.disabled(disabled=true) .btn.danger:disabled
+        //- .content-btn-panel
+        //-     button.ui-btn.success .btn.success
+        //-     button.ui-btn.success.disabled(disabled=true) .btn.success:disabled
+        //- .content-btn-panel
+        //-     button.ui-btn.outlined .btn.outlined
+        //-     button.ui-btn.outlined.disabled(disabled=true) .btn.outlined:disabled
+        .content-btn-panel
+            button.ui-btn.primary.outlined .btn.primary.outlined
+            button.ui-btn.primary.outlined.disabled(disabled=true) .btn.primary.outlined:disabled
+        .content-btn-panel
+            button.ui-btn.orange.outlined .btn.orange.outlined
+            button.ui-btn.orange.outlined.disabled(disabled=true) .btn.orange.outlined:disabled
+        .content-btn-panel
+            button.ui-btn.red.outlined .btn.red.outlined
+            button.ui-btn.red.outlined.disabled(disabled=true) .btn.red.outlined:disabled
+
+        .content-btn-panel
+            button.ui-btn.primary.round .btn.primary.round
+            button.ui-btn.primary.round.disabled(disabled=true) .btn.primary.round:disabled
+        .content-btn-panel
+            button.ui-btn.orange.round .btn.orange.round
+            button.ui-btn.orange.round.disabled(disabled=true) .btn.orange.round:disabled
+        .content-btn-panel
+            button.ui-btn.red.round .btn.red.round
+            button.ui-btn.red.round.disabled(disabled=true) .btn.red.round:disabled
+
+        .content-btn-panel
+            button.ui-btn.primary.outlined.round .btn.primary.outlined.round
+            button.ui-btn.primary.outlined.round.disabled(disabled=true) .btn.primary.outlined.round:disabled
+        .content-btn-panel
+            button.ui-btn.orange.outlined.round .btn.orange.outlined.round
+            button.ui-btn.orange.outlined.round.disabled(disabled=true) .btn.orange.outlined.round:disabled
+        .content-btn-panel
+            button.ui-btn.red.outlined.round .btn.red.outlined.round
+            button.ui-btn.red.outlined.round.disabled(disabled=true) .btn.red.outlined.round:disabled
+
+        .content-btn-panel
+            button.ui-btn.bigger.block .btn.bigger.block
+        .content-btn-panel
+            button.ui-btn.bigger.primary.block .btn.bigger.primary.block
+        .content-btn-panel
+            button.ui-btn.bigger.orange.block .btn.bigger.orange.block
+        .content-btn-panel
+            button.ui-btn.bigger.red.block .btn.bigger.red.block
+
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.primary.block .btn.bigger.outlined.primary.block
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.orange.block .btn.bigger.outlined.orange.block
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.red.block .btn.bigger.outlined.red.block
+
+        .content-btn-panel
+            button.ui-btn.bigger.round.primary.block .btn.bigger.round.primary.block
+        .content-btn-panel
+            button.ui-btn.bigger.round.orange.block .btn.bigger.round.orange.block
+        .content-btn-panel
+            button.ui-btn.bigger.round.red.block .btn.bigger.round.red.block
+
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.round.primary.block .btn.bigger.outlined.round.primary.block
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.round.orange.block .btn.bigger.outlined.round.orange.block
+        .content-btn-panel
+            button.ui-btn.bigger.outlined.round.red.block .btn.bigger.outlined.round.red.block
+
+        .half-width-btn-container
+            .sub-container
+                button.ui-btn.block .btn.block
+            .sub-container
+                button.ui-btn.block(disabled=true) .btn.block:disabled
+        .half-width-btn-container
+            .sub-container
+                button.ui-btn.primary.block .btn.primary.block
+            .sub-container
+                button.ui-btn.primary.block(disabled=true) .btn.primary.block:disabled
+        .half-width-btn-container
+            .sub-container
+                button.ui-btn.orange.block .btn.orange.block
+            .sub-container
+                button.ui-btn.orange.block(disabled=true) .btn.orange.block:disabled
+        .half-width-btn-container
+            .sub-container
+                button.ui-btn.red.block .btn.red.block
+            .sub-container
+                button.ui-btn.red.block(disabled=true) .btn.red.block:disabled
+
+        .content-btn-panel.smaller
+            button.ui-btn.smaller.primary .btn.smaller.primary
+            button.ui-btn.smaller.primary.disabled(disabled=true) .btn.smaller.primary:disabled
+            button.ui-btn.smaller.outlined.primary .btn.smaller.outlined.primary
+            button.ui-btn.smaller.outlined.primary.disabled(disabled=true) .btn.smaller.outlined.primary:disabled
+            button.ui-btn.smaller.round.primary .btn.smaller.round.primary
+            button.ui-btn.smaller.round.primary.disabled(disabled=true) .btn.smaller.round.primary:disabled
+            button.ui-btn.smaller.round.outlined.primary .btn.smaller.round.outlined.primary
+            button.ui-btn.smaller.round.outlined.primary.disabled(disabled=true) .btn.smaller.round.outlined.primary:disabled
+
+block script

@@ -1,0 +1,136 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '详情'
+    - var useRem = true
+
+append style
+    //- link(rel="stylesheet",type="text/css",href=`${_static('style/ensure/ensure-common.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('public/videojs/videojs.css')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/lion/classroom-detail.scss')}`)
+
+
+block pageContent
+    main.page-content
+        video#my-video.video-js.vjs-big-play-centered(preload="auto" data-setup="{}" controls playsinline)
+            //- source(src="http://172.20.10.2:8080/1.mp4" type="video/mp4")
+            source(src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+            p.vjs-no-js
+                | To view this video please enable JavaScript, and consider upgrading to a
+                | web browser that
+                a(href="https://videojs.com/html5-video-support/" target="_blank") supports HTML5 video
+        .content-sm
+            .brief-int
+                .brief-int-title 新手绑卡三步走！账户安全有保障！
+                .brief-int-text 内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简
+                .brief-int-bottom
+                    .brief-int-bot-time 19小时前
+                    .brief-int-bot-rig
+                        div.looked 200
+                        div.fabulous 200
+            .img-article
+                .article-top 随着多家方舱医院关门休舱，多省无新增确诊，疫情态势已逐步向好。加速复工复产，强效提振经济已刻不容缓。要打赢疫后经济社会发展复苏战，消费领域则是重中之重。
+                .img
+                    img(src=`${_static('data/image/lion/banner1.png')}`)
+                .article-bottom 随着多家方舱医院关门休舱，多省无新增确诊，疫情态势已逐步向好。加速复工复产，强效提振经济已刻不容缓。要打赢疫后经济社会发展复苏战，消费领域则是重中之重。
+            .detail-btn
+                .collection-btn
+                .fabulous-btn.active
+        
+        .comment-area
+            .comment-area-title-lg
+                .comment-area-title 评论
+                    span.num (20)
+            .scroll-container
+                .list
+                    .comment-area-con
+                        .img
+                            img(src=`${_static('data/image/lion/person-img.png')}`)
+                        .com-con
+                            .com-con-name.active 建行小小(官方评论)
+                            .com-con-time 23分钟前
+                            .com-con-con 评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                            .com-con-bottom
+                                .com-con-bottom-left 举报
+                                .com-con-bottom-right
+                                    .fabulous.active 21
+                                    .reply 回复
+                    //- .comment-area-con
+                    //-     .img
+                    //-         img(src=`${_static('data/image/lion/person-img.png')}`)
+                    //-     .com-con
+                    //-         .com-con-name 开心的小杨
+                    //-         .com-con-time 1天前
+                    //-         .com-con-con 评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                    //-         .com-con-bottom
+                    //-             .com-con-bottom-left 举报
+                    //-             .com-con-bottom-right
+                    //-                 .fabulous 赞
+                    //-                 .reply 回复
+                    //- .comment-area-con
+                    //-     .img
+                    //-         img(src=`${_static('data/image/lion/person-img.png')}`)
+                    //-     .com-con
+                    //-         .com-con-name 开心的小王
+                    //-         .com-con-time 1天前
+                    //-         .com-con-con 评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                    //-         .com-con-reply
+                    //-             .person-reply-con
+                    //-                 .person-name 行走的小王
+                    //-                 .reply-time 3天前
+                    //-             .con-reply-con 回复内容回复内容回复内容回复内容回复内容回回复内容回复内容回复内容回复内容回复内容回回复内容回复内容回复内容回复内容回复内容回
+                    //-         .com-con-bottom
+                    //-             .com-con-bottom-left 举报
+                    //-             .com-con-bottom-right
+                    //-                 .fabulous 赞
+                    //-                 .reply 回复
+            .comment-say-area
+                input.comment-say(Placeholder="说点什么吧...")
+                .comment-btn-lg
+                    .comment-btn-sm 21
+                    .collection-btn-sm.active 36
+                    .fabulous-btn-sm 99
+            .comment-area-active.hidden
+                textarea.comment-con(type="text" Placeholder="说点什么吧...")
+                .sub-btn 发布
+    script(type="text/template",id="loadding-html")
+        .loadding-html
+            .init
+                 img(src=`${_static('data/image/lion/init.gif')}`)
+            .follow 
+                img(src=`${_static('data/image/lion/follow.gif')}`)
+    script(type="text/template",id="no-more-data-html")
+        .no-more-data-html
+            span 到底啦
+    script(type="text/template",id="list-template").
+        {{#data}}
+            <div class="comment-area-con">
+                <div class="img">
+                    <img src="{{imgUrl}}">
+                </div>
+                <div class="com-con">
+                    <div class="com-con-name">{{comConName}}</div>
+                    <div class="com-con-time">{{comConTime}}</div>
+                    <div class="com-con-con">{{comConCon}}</div>
+                    {{#comConReply}}
+                    <div class="com-con-reply">
+                        <div class="person-reply-con">
+                            <div class="person-name">{{personName}}</div>
+                            <div class="reply-time">{{replyTime}}</div>
+                        </div>
+                        <div class="con-reply-con">{{conReplyCon}}</div>
+                    </div>
+                    {{/comConReply}}
+                    <div class="com-con-bottom">
+                        <div class="com-con-bottom-left">举报</div>
+                        <div class="com-con-bottom-right">
+                            <div class="fabulous">赞</div>
+                            <div class="reply">回复</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/data}} 
+
+append script
+    script(src=`${_static('script/entry/lion/classroom-detail.js')}`)

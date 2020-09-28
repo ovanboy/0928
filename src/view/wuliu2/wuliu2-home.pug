@@ -1,0 +1,67 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '物流详情'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/wuliu2/wuliu2-home.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .detail
+            .detail-Company
+                .Company 物流公司：
+                .content 圆通速递
+            .deil-code
+                .code 物流单号：
+                .num 321123412341243
+                .copy 复制
+        .main
+            .card-logon
+            ul.info
+                li.info-first
+                    .header
+                        .succes
+                        span.signature 已签收
+                    .main-info
+                        .detail1 快件已在浦江张江高科签收，签收人：本人 
+                        .detail2 如有疑问请致电：<span style="color:#4586FF">13112341234</span>
+                        .timer 2020-06-15
+                            span 15:37:45
+                li.info-scend
+                    .header
+                        .succes
+                        span.signature 派送中
+                    .main-info
+                        .detail1 【上海市】浦东苏桥派件员 李峰 电话：<span style="color:#4586FF">13112341234</span>
+                        .detail2 当前正在为您派件
+                        .timer 2020-06-15
+                            span 15:37:45
+                li.info-third
+                    .header
+                        .succes
+                        span.signature 运输中
+                    .main-info
+                        .detail1 【上海市】达到【上海浦东营业点】
+                        .timer 2020-06-15
+                            span 15:37:45
+                    .step1 
+                        .dia
+                        span.addres 运输中
+
+                       
+                    
+                        
+
+    
+        
+        
+       
+       
+        
+
+
+append script
+    script(src=`${_static('script/entry/wuliu2/wuliu2-home.js')}`)

@@ -1,0 +1,93 @@
+{
+    "countNum":20,
+    "data": [
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": false,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": true,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": true,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": false,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": true,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": false,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": false,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": true,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": false,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": true,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": true,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": false,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": false,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": true,
+            "durationTime": "05:23"
+        },
+        {
+            "prodUrl": "http://test.com",
+            "imgUrl": "/static/data/image/lion/article-pic.png",
+            "detailText": "新手绑卡三步走!账户安全有保障!",
+            "largeColumn": false,
+            "fabulous": "200",
+            "looked": "200",
+            "comment": "200",
+            "smallColumn": true,
+            "durationTime": "05:23"
+        }
+    ]
+}

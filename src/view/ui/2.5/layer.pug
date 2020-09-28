@@ -1,0 +1,28 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = '展示层组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/2.5/layer.scss')}`)
+
+block pageContent
+    main.page-content
+        .content-btn-panel.bigger
+            button.ui-btn.bigger.primary.block 默认尺寸(300*360)
+            button.ui-btn.bigger.primary.block(data-width="200",data-height="300") 自定义尺寸(200*300)
+            button.ui-btn.bigger.primary.block(data-width="340",data-height="500") 自定义尺寸(340*500)
+            button.ui-btn.bigger.red.block(data-width="2000",data-height="2000",data-no-button="true") 自定义尺寸(2000*2000)
+            button.ui-btn.bigger.primary.block(data-no-padding="true") 默认尺寸无内边距
+            button.ui-btn.bigger.primary.block(data-no-button="true") 默认尺寸无按钮
+            button.ui-btn.bigger.primary.block(data-no-button="true",data-no-padding="true") 默认尺寸无按钮无内边距
+            button.ui-btn.bigger.primary.block(data-width="200",data-height="300",data-no-button="true") 自定义尺寸(200*300)无按钮
+        #layer-content
+            .panel.red
+            .panel.green
+            .panel.blue
+            .panel.purple
+                button.ui-btn.primary(type="button",data-action="closeLayer") 关闭层
+
+append script
+    script(src=`${_static('script/entry/ui/2.5/layer.js')}`)

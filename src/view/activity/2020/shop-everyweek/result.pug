@@ -1,0 +1,21 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '周周刷'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/shop-everyweek/result.scss')}`)
+
+block pageContent
+    main.page-content
+        .mainbg
+        p.tab.hide.show 咦，你好像不是它们的客人
+        p.tab.hide 哎呀！结束了呢
+        p.tab.hide 活动太火爆了
+        
+        p.info 可以去其他地方看看哟～
+        p.info.hide 稍后再试试吧～
+        button.btn 返回
+        
+append script
+    script(src=`${_static('script/entry/activity/2020/shop-everyweek/result.js')}`)

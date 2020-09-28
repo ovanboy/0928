@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import "3.0/base.scss";
+
+
+.content-btn-panel {
+    padding: 10px 15px;
+    line-height: 54px;
+    background-color: #fff;
+    .ui-btn.block {
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.demo-layer {
+    height: 300px;
+}

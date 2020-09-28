@@ -1,0 +1,17 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '头部提示组件'
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/tip.scss')}`)
+block pageContent
+    main.page-content
+        .button-bar
+            button.add.add1 纯自动关
+            button.add.add2 纯手动关(touch)
+            button.add.add3 纯手动关(关闭按钮)
+            button.add.add4 自动和手动
+            button.add.add5 不会关(需主动使用js调用关闭方法)
+            button.close 关(调用关闭)
+append script
+    script(src=`${_static('script/entry/ui/3.0/tip.js')}`)

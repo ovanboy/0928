@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+$namespace: null !default;
+
+$primary-color: #3E73FF !default;
+
+
+
+.#{$namespace}panel {
+	margin: 10px 0;
+	background-color: #fff;
+}
+
+.#{$namespace}gap {
+	padding: 10px 15px;
+}
+
+.#{$namespace}gap + .#{$namespace}panel {
+	margin-top: 0;
+}
+
+
+
+
+
+.#{$namespace}text-link {
+	color: $primary-color;
+	text-decoration: none;
+}

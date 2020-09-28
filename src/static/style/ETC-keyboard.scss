@@ -1,0 +1,172 @@
+@charset "utf-8";
+.keyboard-panel {
+  background: #FBFBFB;
+  position: fixed;
+  left: 0;
+  right:0;
+  bottom: 0;
+  text-align: center;
+  font-size: 0;
+  z-index: 9999;
+  &.keyboard-type-p {
+    .p-type {
+      display: block !important;
+    }
+  }
+  &.keyboard-type-n, &.keyboard-type-l{
+    .letter-number-type {
+      display: block !important;
+    }
+  }
+  .keyboard-complete-btn {
+    height: 42px;
+    line-height: 42px;
+    font-weight: 500;
+    font-size: 17px;
+    color: #4586FF;
+    padding-left: 4px;
+    padding-right: 15px;
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .keyboard-main-cont {
+    background: rgba(210,213,219,0.90);
+    margin: 42px auto 0 auto;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    max-width: 420px;
+    &.p-type {
+      display: none;
+    }
+    &.letter-number-type {
+      display: none;
+    }
+  }
+  .keyboard-cell {
+    display: table-cell;
+    .label-text {
+      display: inline-block;
+      font-size: 18px;
+      background: #FFFFFF;
+      box-shadow: 0 1px 0 0 rgba(0,0,0,0.35);
+      border-radius: 5px;
+      line-height: 42px;
+      height: 42px;
+      width: 32px;
+      text-align: center;
+    }
+    &:active {
+      .label-text {
+        background: rgba(255,255,255,0.4);
+      }
+    }
+  }
+  &.open-panel {
+    transform: translateY(0);
+    transition: transform .35s linear;
+  }
+  &.close-panel {
+    transform: translateY(100%);
+    transition: transform .35s linear;
+  }
+}
+.keyboard-hide {
+  opacity: 0;
+}
+.keyboard-delete-btn {
+  position: absolute;
+  top:0;
+  right: 59px;
+  background: url("/style/_asset/image/card/ETC/icon-delete.png") no-repeat rgba(171,179,189,0.50);
+  background-size: 23px 17px;
+  background-position: center center;
+  width: 62px;
+  height: 42px;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.35);
+  border-radius: 5px;
+  &:active {
+    background-color: rgba(147,166,189,0.50);
+  }
+}
+
+.keyboard-row {
+  margin-bottom: 12px;
+  display: table;
+  width: 100%;
+  position: relative;
+}
+
+.keyboard-type-p {
+  .keyboard-row {
+    &:nth-child(1) {
+      padding: 0px;
+    }
+    &:nth-child(2) {
+      padding: 0px 18px;
+    }
+    &:nth-child(3) {
+      padding: 0px 56px;
+    }
+    &:nth-child(4) {
+      padding: 0px 131px 0px 56px;
+      margin-bottom: 0;
+    }
+  }
+}
+.keyboard-type-n, .keyboard-type-l {
+  .keyboard-row {
+    &:nth-child(1) {
+      padding: 0px;
+    }
+    &:nth-child(2) {
+      padding: 0px;
+    }
+    &:nth-child(3) {
+      padding: 0px 18px;
+    }
+    &:nth-child(4) {
+      padding: 0px 131px 0px 56px;
+      margin-bottom: 0;
+    }
+  }
+  .keyboard-cell {
+    .label-text {
+      font-size: 22px;
+    }
+  }
+}
+.keyboard-type-l {
+  .keyboard-row {
+    &:nth-child(1) {
+      .keyboard-cell {
+        pointer-events: none;
+        .label-text {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+.addSpacer {
+  height: 200px;
+  transition: height 5s linear;
+}
+
+@media screen and (max-width: 320px){
+  .keyboard-panel .keyboard-cell .label-text {
+    width: 30px;
+  }
+  .keyboard-type-p .keyboard-row:nth-child(3) {
+    padding: 0 48px;
+  }
+  .keyboard-row:nth-child(4) {
+    padding: 0 112px 0 48px !important;
+  }
+  .keyboard-delete-btn {
+    right: 48px;
+  }
+}

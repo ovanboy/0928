@@ -1,0 +1,21 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '水波进度条'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/progress-wave.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .ui-panel.progress-container
+            .wave-progress.progress-wave(data-value="0.7",data-text="70%")
+                .view-box
+                    .value-bar
+
+
+append script
+    script(src=`${_static('script/entry/ui/demo/progress-wave.js')}`)

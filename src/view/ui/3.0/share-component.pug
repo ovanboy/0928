@@ -1,0 +1,11 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = 'app内微信分享H5组件'
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/share-component.scss')}`)
+block pageContent
+    main.page-content
+        button.open-btn 开始分享
+append script
+    script(src=`${_static('script/entry/ui/3.0/share-component.js')}`)

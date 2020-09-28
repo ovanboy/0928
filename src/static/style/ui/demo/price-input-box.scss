@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+@import "3.0/base.scss";
+
+
+
+.test-form .ui-panel {
+	padding: 0 15px;
+}
+
+.test-input-box {
+	display: block;
+	width: 100%;
+	height: 46px;
+	background-color: transparent;
+	border-width: 0;
+	margin: 0;
+	padding: 0 5px;
+	color: #999;
+	font-size: 36px;
+	line-height: 46px;
+	font-family: "PingFang SC","Source Han Sans CN","Microsoft Yahei",Tahoma,Arial,sans-serif;
+}
+
+.action-box {
+	margin-top: 30px;
+	padding: 10px 15px;
+}
+
+
+.amount-input-box {
+	.input-wrapper {
+		position: relative;
+		padding: 0 0 0 15px;
+		height: 60px;
+	}
+	.currency-symbol {
+		position: absolute;
+		bottom: 9px;
+		left: 0;
+		width: 15px;
+		height: 28px;
+		line-height: 28px;
+		font-size: 20px;
+		color: #333;
+	}
+	.input-inner {
+		position: relative;
+		height: 100%;
+		padding: 9px 0 5px;
+	}
+	.input-box {
+		opacity: 0;
+		position: absolute;
+		z-index: 1;
+		top: 9px;
+		left: 0;
+		width: 100%;
+		height: 46px;
+		background-color: transparent;
+		border-width: 0;
+		margin: 0;
+		padding: 0 5px;
+		color: #333;
+		font-size: 36px;
+		line-height: 46px;
+		font-family: "PingFang SC","Source Han Sans CN","Microsoft Yahei",Tahoma,Arial,sans-serif;
+		&:focus {
+			opacity: 1;
+			//display: block;
+			&+.shadow-box {
+				display: block;
+				&+.clear-btn {
+					&+.view-box {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.shadow-box {
+		display: none;
+		position: absolute;
+		z-index: 0;
+		top: 9px;
+		left: 0;
+		width: 100%;
+		height: 46px;
+		background-color: transparent;
+		border-width: 0;
+		margin: 0;
+		padding: 0 5px;
+		color: #999;
+		font-size: 36px;
+		line-height: 46px;
+		font-family: "PingFang SC","Source Han Sans CN","Microsoft Yahei",Tahoma,Arial,sans-serif;
+	}
+	.clear-btn {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        top: 22px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("/style/_asset/image/ui/form/clear-btn-bg.png");
+        background-size: 20px auto;
+	}
+	.view-box {
+		display: block;
+		position: absolute;
+		z-index: 3;
+		top: 9px;
+		left: 0;
+		width: 100%;
+		height: 46px;
+		// padding: 0 5px;
+		// color: #333;
+		// font-size: 36px;
+		// line-height: 46px;
+		.view {
+			display: block;
+			width: 100%;
+			height: 46px;
+			background-color: transparent;
+			border-width: 0;
+			margin: 0;
+			padding: 0 5px;
+			color: #333;
+			font-size: 36px;
+			line-height: 46px;
+			font-family: "PingFang SC","Source Han Sans CN","Microsoft Yahei",Tahoma,Arial,sans-serif;
+		}
+		.edit {
+			display: none;
+			position: absolute;
+			top: 14px;
+			right: 0;
+			height: 19px;
+			line-height: 19px;
+			font-size: 13px;
+			color: #3E73FF;
+		}
+	}
+	.info-box {
+		position: relative;
+		//height: 41px;
+		.min-tips {
+			float: left;
+			padding: 10px 0;
+			line-height: 21px;
+			color: #3E73FF;
+			font-size: 13px;
+		}
+		.max-tips {
+			float: right;
+			padding: 10px 0;
+			line-height: 21px;
+			color: #3E73FF;
+			font-size: 13px;
+		}
+		.num {
+			margin-left: 5px;
+		}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 1px;
+			background-color: #e8e8e8;
+			transform: scaleY(.5);
+			transform-origin: center top;
+		}
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	.error-box {
+		display: none;
+		position: relative;
+		padding: 10px 0;
+		color: #FF4158;
+		font-size: 13px;
+		line-height: 21px;
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 1px;
+			background-color: #FF4158;
+			transform: scaleY(.5);
+			transform-origin: center top;
+		}
+	}
+	&.has-value {
+		.input-box:focus {
+			&+.shadow-box {
+				&+.clear-btn {
+					display: block;
+				}
+			}
+		}
+		.view-box {
+			.edit {
+				display: block;
+			}
+		}
+	}
+	&.error {
+		.info-box {
+			display: none;
+		}
+		.error-box {
+			display: block;
+		}
+	}
+}

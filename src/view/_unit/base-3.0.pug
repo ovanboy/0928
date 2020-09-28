@@ -1,0 +1,66 @@
+block data
+    - var _static = function(s){ return config.staticPath.replace(/\/$/,'') + '/' + s.replace(/^\//,''); }
+    - var pageTitle = '请添加页面标题'
+    - var remBase = 7.5
+    - var useRem = false
+doctype html
+html(lang="zh-cn")
+    head
+        meta(charset="UTF-8")
+        title #{pageTitle}
+        meta(name="viewport",content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+        meta(name="format-detection",content="telephone=no,email=no,date=no,address=no")
+        //- link(rel="icon",type="image/x-icon",href=`${_static('data/image/favicon.ico')}`)
+        //- rem
+        if useRem
+            script.
+                (function () {
+                    var w = Math.min(document.documentElement.clientWidth, document.documentElement.clientHeight);
+                    document.documentElement.style.fontSize = w / #{remBase} + 'px';
+                    window.addEventListener('resize', function () {
+                        w = Math.min(document.documentElement.clientWidth, document.documentElement.clientHeight);
+                        document.documentElement.style.fontSize = w / #{remBase} + 'px';
+                    })
+                })();
+
+        //- 页面引入的样式
+        block style
+            link(rel="stylesheet",type="text/css",href=`${_static('style/common-3.0.scss')}`)
+
+        //- 开发模式下引入移动设备调试工具
+        if config.vConsole
+            script(src=`${_static('public/vconsole/vconsole.min.js')}`)
+            script new VConsole();
+
+        //- requirejs baseUrl 配置
+        script.
+            var require = {
+                baseUrl: '#{config.staticPath}'.replace(/\/$/,'') + '/script'
+            };
+    body(ontouchstart="")
+        //- 页头
+        block pageHeader
+            include /_unit/header.pug
+
+        //- 页面主体
+        block pageContent
+            main.page-content
+
+        //- 页脚
+        block pageFooter
+
+        //- 页面中用到的模板
+        block other
+
+        //- 页面中引入的脚本
+        block script
+            script(src=`${_static('public/requirejs/require.js')}`)
+            script(src=`${_static('script/require.config-3.0.js')}`)
+            script.
+                // 引入跟踪采集代码
+                if(window && window.location && window.location.host.indexOf('localhost') == -1){
+                    var gzcjScript = document.createElement('script');
+                    gzcjScript.src='https://creditcard.bankcomm.com/etc/designs/pccc/shared/clientlibs/js/gzcj_02.js';
+                    document.querySelector('body').appendChild(gzcjScript);
+                } 
+            

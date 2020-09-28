@@ -1,0 +1,41 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '金砖明细'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/shop-everyweek/brick-list.scss')}`)
+
+block pageContent
+    main.page-content
+        .select-box
+            .selectBox
+                span.year-mon 2020年-月
+        .list-container
+            .content-wrapper
+                //- .listitem
+                //-     .left.item
+                //-         p.tit 消费获得金砖
+                //-         p.time 2020.05.02
+                //-     .right.item
+                //-         p.green 222
+                //- .foot 显示全部
+            
+block other
+    script#bill-tpl(type="text/template")
+        | {{#list}}
+        .listitem
+            .left.item
+                p.tit {{name}}
+                p.time {{time}}
+            .right.item
+                p(class="{{#minus}}green{{/minus}}{{^minus}}red{{/minus}}") {{fee}}
+        | {{/list}}
+
+append script
+    script.
+        var urlInfo = {
+            // banner数据
+            getShopListRequestUrl: '/activity/2020/shop-everyweek/getshoplist.json'
+            }
+    script(src=`${_static('script/entry/activity/2020/shop-everyweek/brick-list.js')}`)

@@ -1,0 +1,34 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = '对话框组件'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/dialog.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .ui-panel
+            .half-width-btn-container
+                .sub-container
+                    button#alert-btn.ui-btn.primary.block alert
+                .sub-container
+                    button#alert-custom-btn.ui-btn.primary.block alert 定制
+            .half-width-btn-container
+                .sub-container
+                    button#confirm-btn.ui-btn.primary.block confirm
+                .sub-container
+                    button#confirm-custom-btn.ui-btn.primary.block confirm 定制
+            .half-width-btn-container
+                .sub-container
+                    button#prompt-btn.ui-btn.primary.block prompt
+                .sub-container
+                    button#prompt-custom-btn.ui-btn.primary.block prompt 定制
+        .ui-panel.content-btn-panel
+            button#custom-btn.ui-btn.bigger.primary.block 自由定制
+
+append script
+    script(src=`${_static('script/entry/ui/3.0/dialog.js')}`)

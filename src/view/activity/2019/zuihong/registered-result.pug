@@ -1,0 +1,29 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zuihong/index.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zuihong/registered-result.scss')}`)
+
+
+block pageContent
+    main.page-content
+        img.img(src=`${_static('data/image/zuihong/lion-fail.png')}`)
+        .state 魔都卡或帝都卡不可参加活动的话术，魔都卡或帝都卡不可参加活动的话术。<a href="#1">查看活动细则></a>
+        .panel.panel-more
+                .panel-title 更多最红活动
+                .panel-content
+                    .lg.lg1
+                    .lg.lg2
+                    .lg.lg3
+                    .wrapper
+                        p 无需注册，也可享其他最红星期五精彩活动！快去看看还有哪些优惠活动吧。
+                        a.btn-big(href="#1")  进入最红专区
+        
+
+
+append script
+    script(src=`${_static('script/entry/zuihong/registered-result.js')}`)

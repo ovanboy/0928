@@ -1,0 +1,56 @@
+extends /_unit/base-3.0.pug
+
+append data
+    -   var pageTitle = '开奖结果'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/activity/2020/shop-everyweek/result-list.scss')}`)
+
+block pageContent
+    main.page-content
+        .prizeNum 本月您参与排名的金砖数为
+            span ***
+        .list-container
+            .content-wrapper
+                //- .listitem
+                //-     .left.item
+                //-         img.pro(src=`${_static('data/image/activity/2020/shop-everyweek/mypro.png')}`, alt="")
+                //-         .icon
+                //-     .right.item
+                //-         .name 奖品1名称奖品1名称奖品1名称奖品1名称奖品1名奖品1名称奖品1名称奖奖品1名称奖奖品1名称奖奖品1名称奖
+                //-         .bottom
+                //-             p.num 共
+                //-                 span 1000
+                //-                 |份
+                //-             p.latest 本轮排名获奖最低金砖数：
+                //-                 span.latestspan ***
+            .foot
+                button 获奖名单公示
+            
+block other
+    script#result-tpl(type="text/template")
+
+        | {{#list}}
+        .listitem
+            .left.item
+                img.pro(src="{{image}}", alt="")
+                |{{#hadchoosed}}
+                .icon
+                |{{/hadchoosed}}
+            .right.item
+                .name {{name}}
+                .bottom
+                    p.num 共
+                        span {{No}}
+                        |份
+                    p.latest 本轮排名获奖最低金砖数：
+                        span.latestspan {{val}}
+        | {{/list}}
+
+append script
+    script.
+        var urlInfo = {
+            // banner数据
+            getResultListRequestUrl: '/activity/2020/shop-everyweek/getresultlist.json'
+            }
+    script(src=`${_static('script/entry/activity/2020/shop-everyweek/result-list.js')}`)

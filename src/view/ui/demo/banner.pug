@@ -1,0 +1,21 @@
+extends /_unit/base-3.0.pug
+
+
+append data
+    - var pageTitle = 'banner示例'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/demo/banner.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .banner
+            .banner-bg
+                .round-a
+                .round-b
+                .round-c
+
+
+block script

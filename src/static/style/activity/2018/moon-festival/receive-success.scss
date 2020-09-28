@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+//配置
+@import "variable.scss";
+@import "mixin.scss";
+
+.page-content {
+    background: url("/style/_asset/image/activity/2018/moon-festival/main-bg.png") no-repeat #283B41;
+    background-size: 100% auto;
+    //width: 375px;
+    height: 100%;
+    .panelCon {
+        position: absolute;
+        background: url("/style/_asset/image/activity/2018/moon-festival/pannel.png")  no-repeat;
+        width: 335px;
+        height: 462px;
+        background-size: 100% 100%;
+        bottom: 26px;
+        left:50%;
+        margin-left: -167px;
+        .adsCon {
+            width: 308px;
+            height: 322px;
+            background: url("/style/_asset/image/activity/2018/moon-festival/group2.png") no-repeat;
+            background-size: 100% auto;
+            margin-top: 37px;
+        }
+        .buttonBar {
+            width: 320px;
+            margin-top: 26px;
+            text-align: center;
+            .actBtn1, .actBtn2 {
+                width: 135px;
+                height: 40px;
+                border-radius: 22px;
+                font-size: 15px;
+            }
+            .actBtn1 {
+                //background-image: linear-gradient(-135deg, #EFC57D 0%, #BF8D4B 100%);
+                border: 1px #D8AA65 solid;
+                color: #C08F4D;
+                background: transparent;
+                margin-right: 10px;
+            }
+            .actBtn2 {
+                background-image: linear-gradient(-135deg, #BF8D4B 0%, #EFC57D 100%);
+                border: none;
+                color: #8A530B;
+            }
+        }
+    }
+    .wishesAndSignatureCon {
+        position: absolute;
+        left: 15px;
+        top: 83px;
+        width: 154px;
+        height: 282px;
+        .wishesBg {
+            width: 154px;
+            height: 244px;
+            background: url("/style/_asset/image/activity/2018/moon-festival/happy-moon-festival.png") no-repeat;
+            background-size: 154px 244px;
+            margin-top: 38px;
+        }
+        .signature {
+            color: #fff;
+            width: 131px;
+            //height: 25px;
+            font-size: 0px;
+            position: absolute;
+            font-weight: bold;
+            top: 0px;
+            left: 5px;
+            display: block;
+            text-align: left;
+            .nameSpan {
+                max-width: 94px;
+                //float: left;
+                overflow: hidden;
+                display: inline-block;
+                height: 20px;
+                word-break: break-word;
+                font-size: 18px;
+                vertical-align: top;
+            }
+            span {
+                font-size: 18px;
+                vertical-align: top;
+            }
+            //word-break: break-all;
+            //word-wrap:break-word;
+            //.line {
+            //    height: 29px;
+            //    border-right: 1px solid #fff;
+            //    float: left;
+            //    margin-left: 6px;
+            //}
+        }
+    }
+    .footerCon {
+        width: 100%;
+        //height: 61px;
+        position: absolute;
+        padding-top: 16.26666%;
+        bottom: 0px;
+        background: url("/style/_asset/image/activity/2018/moon-festival/bottom-bg.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
+    }
+}
+
+//.verticalCenter{
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//}
+
+.verticalCenter{
+    text-align: center;
+    &>* {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .panelCon {
+        transform-origin: 50% 100%;
+        transform: scale(.85);
+    }
+}

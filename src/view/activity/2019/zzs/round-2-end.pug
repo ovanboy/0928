@@ -1,0 +1,44 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zzs/round-2-end.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .round-home   
+            img.round-home-title(src=`${_static('data/image/zzs/home-title.png')}`)
+            .panel
+                .panel-title 第2轮战况
+                .panel-content 
+                    .panel-bold 结果统计中，将于10月9日开奖
+            .panel
+                .panel-title 第1轮战况
+                .panel-content 
+                    .panel-bold 获得奖品：索尼PS4 Pro家用套装
+                .panel-footer
+                    a.panel-btn.check-award 查看开奖结果
+                    a.panel-btn 查看物流
+    script(type="text/template",id='award-list-layer-template')
+        .award-list-layer-content
+            h3 {{{underTwoWeeksDetail}}}
+            ul 
+                |{{#prizeList}}
+                li 
+                    .up
+                        .aname {{prizeNm}}
+                        .acount 共{{actStore}}份
+                    .down
+                        span 最低累积消费额:{{pntConsumeCnt}}元
+                        |{{#isSelect}}
+                        i.selected 已选
+                        |{{/isSelect}}
+                |{{/prizeList}}
+
+
+append script
+    script(src=`${_static('script/entry/zzs/round-2-end.js')}`)

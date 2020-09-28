@@ -1,0 +1,47 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '按钮组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/button.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-gap 普通按钮
+        .ui-panel.btn-container
+            .content-btn-panel
+                button.ui-btn .ui-btn
+                button.ui-btn(disabled=true) .ui-btn:disabled
+            .content-btn-panel
+                a.ui-btn .ui-btn
+                a.ui-btn.disabled .ui-btn.disabled
+        .ui-gap 主按钮
+        .ui-panel.btn-container
+            .content-btn-panel
+                button.ui-btn.primary .ui-btn.primary
+                button.ui-btn.primary(disabled=true) .ui-btn.primary:disabled
+                button.ui-btn.primary.round .ui-btn.primary.round
+                button.ui-btn.primary.round.disabled(disabled=true) .ui-btn.primary.round:disabled
+        .ui-gap 线框按钮
+        .ui-panel.btn-container
+            .content-btn-panel
+                button.ui-btn.outlined .ui-btn.outlined
+                button.ui-btn.outlined.round .ui-btn.outlined.round
+                button.ui-btn.outlined.round.disabled(disabled=true) .ui-btn.outlined.round:disabled
+        .ui-gap 块级按钮
+        .ui-panel.btn-container
+            .content-btn-panel.block
+                button.ui-btn.block .ui-btn.block
+            .content-btn-panel.block
+                button.ui-btn.primary.block .ui-btn.primary.block
+        .half-width-btn-container
+            .sub-container
+                button.ui-btn.block .ui-btn.block
+            .sub-container
+                button.ui-btn.primary.block .ui-btn.primary.block
+        .content-btn-panel.smaller
+            button.ui-btn.smaller.outlined.round .ui-btn.smaller.outlined.round
+            button.ui-btn.smaller.outlined.round.disabled(disabled=true) .ui-btn.smaller.outlined.round:disabled
+
+block script

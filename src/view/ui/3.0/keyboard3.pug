@@ -1,0 +1,70 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = 'CFCA 加密键盘'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('public/cfcasip/cfcasip.css')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/keyboard.scss')}`)
+
+block pageContent
+    main.page-content
+        .input-box
+            .label 原生键盘
+            .cont
+                input.normal-input(type="text" placeholder="请输入")
+                #cleart-btn0.clear-btn
+        .input-box
+            .label 密码
+            .sipbox-sip
+                span.cursor#SIPBox1Cursor
+                input.sip#SIPBox1(placeholder="全键盘")
+                #cleart-btn1.clear-btn
+        .input-box
+            .label 确认密码
+            .sipbox-sip
+                span.cursor#SIPBox12Cursor
+                input.sip#SIPBox12(placeholder="全键盘2")
+                #cleart-btn12.clear-btn
+        .action-box
+            button#check.ui-btn.block.primary 比较内容一致性
+        .input-box
+            .label 身份证
+            .sipbox-sip
+                span.cursor#SIPBox2Cursor
+                input.sip#SIPBox2(placeholder="身份证键盘")
+                #cleart-btn2.clear-btn
+        .input-box
+            .label 纯数字
+            .sipbox-sip
+                span.cursor#SIPBox3Cursor
+                input.sip#SIPBox3(placeholder="数字键盘")
+                #cleart-btn3.clear-btn
+        .input-box
+            .label 浮点数
+            .sipbox-sip
+                span.cursor#SIPBox4Cursor
+                input.sip#SIPBox4(placeholder="小数点数字键盘")
+                #cleart-btn4.clear-btn
+        .sipbox-grid.div-relative
+            .grid-sip
+                .box.a#box0
+                .box.b#box1
+                .box.c#box2
+                .box.d#box3
+                .box.e#box4
+                .box.f#box5
+            input.sip.child#SIPBox5(type="text" readonly=true)
+        br 
+        .input-box
+            .label 密码
+            .sipbox-sip
+                span.cursor#SIPBox6Cursor
+                input.sip#SIPBox6(placeholder="数字键盘")
+                #cleart-btn6.clear-btn
+        .action-box
+            button#getvalue.ui-btn.block.primary 获取输入的密码
+            div(style="margin-top: 20px")
+            button#getAllvalue.ui-btn.block.primary 获取全部密码
+append script
+    script(src=`${_static('script/entry/ui/3.0/keyboard3.js')}`)

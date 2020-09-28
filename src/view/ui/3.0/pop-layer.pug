@@ -1,0 +1,15 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '弹出层组件'
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/ui/3.0/pop-layer.scss')}`)
+
+block pageContent
+    main.page-content
+        .ui-panel.content-btn-panel
+            button#btn-demo.ui-btn.primary.block 示例弹层
+            button#btn-demo-option-list.ui-btn.primary.block optionList弹层  
+append script
+    script(src=`${_static('script/entry/ui/3.0/pop-layer.js')}`)

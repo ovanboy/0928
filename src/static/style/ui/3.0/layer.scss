@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@import "variable-2.5.scss";
+@import "mixin.scss";
+
+
+.content-btn-panel {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    line-height: 54px;
+    &.bigger {
+        line-height: 70px;
+    }
+    &.smaller {
+        line-height: 40px;
+    }
+    .#{$namespace}btn.block {
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+#layer-content {
+    display: none;
+}
+.panel {
+    height: 200px;
+    &.red {
+        background-color: red;
+    }
+    &.green {
+        background-color: green;
+    }
+    &.blue {
+        background-color: blue;
+    }
+    &.purple {
+        background-color: purple;
+    }
+}

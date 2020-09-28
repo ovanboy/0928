@@ -1,0 +1,62 @@
+extends /_unit/base-3.0.pug
+
+append data
+    - var pageTitle = '竞猜'
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('style/objection/objection-question-description.scss')}`)
+
+
+block pageContent
+    main.page-content
+        form(id="question-description-form")
+            .ui-gap 已选：催收人员联系我的亲戚、朋友问题
+            .ui-panel
+                .ui-panel-header 请描述你的问题
+                .qs-content
+                    textarea(id="description",placeholder="请描述你的问题（10-100字）",maxlength="100",rows="5")
+                .imgs
+                    //- each k in [1,2,2,2,2,2,,2]
+                    //-     .img(style=`background-image:url(${_static('data/image/objection/demo.png')})`)
+                    //-         i.del
+                    .add
+            .ui-panel
+                .ui-cell
+                    .ui-cell-label 姓名
+                    .ui-cell-cont 
+                        input(id="username",placeholder="请输入姓名",value="*近平",readonly="readonly")
+                .ui-cell
+                    .ui-cell-label 联系手机
+                    .ui-cell-cont 
+                        input(id="telphone",placeholder="请输入手机号",type="tel")
+                    .ui-ctrl.reset
+            .ui-gap 非必填项
+            .ui-panel
+                .ui-cell.action.credential-type
+                    .ui-cell-label 证件类型
+                    .ui-cell-cont(id="credential-type",class="unselected") 请选择
+                    .ui-ctrl.select
+                .ui-cell.input-cell
+                    .ui-cell-label 证件号码
+                    .ui-cell-cont 
+                        input(id="credential-type-val",type="number",placeholder="请输入证件号码")
+                    .ui-ctrl.reset
+                        
+            .plr15
+                button.ui-btn.primary.block 提交
+        script(id="credential-template",type="text/template")
+            ul.ui-option-list
+                li 身份证
+                li 护照
+                li 港澳居民往来内地通行证
+                li 港澳居民往来内地通行证
+                li 台湾同胞往来内地通行证
+                li 其他
+
+
+        
+
+
+append script
+    script(src=`${_static('script/entry/objection/objection-question-description.js')}`)

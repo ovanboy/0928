@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+@import "variable-2.5.scss";
+@import "mixin.scss";
+
+
+
+.content-btn-panel {
+    padding: 10px 15px;
+    line-height: 54px;
+    background-color: #fff;
+    .ui-btn.block {
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.tpl-wrapper {
+    display: none;
+}
+
+.layer-cont {
+    min-height: 100%;
+    padding: 0;
+    .content-btn-panel {
+        background-color: transparent;
+    }
+    &.panel1 {
+        background-color: yellow;
+    }
+    &.panel2 {
+        background-color: green;
+    }
+    &.panel3 {
+        background-color: orange;
+    }
+    &.panel4 {
+        background-color: purple;
+    }
+}
+
+
+.pay-layer {
+    position: relative;
+    height: 364px;
+    .pay-info {
+        height: 76px;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #999;
+        line-height: 1.8em;
+        .price {
+            font-size: 26px;
+            color: #333;
+            font-style: normal;
+        }
+    }
+    .pay-action-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+}
+.jf-fen-switch-wrapper {
+    display: block;
+    position: relative;
+    height: 60px;
+    padding: 0 80px 0 15px;
+    line-height: 60px;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e8e8e8;
+        transform: scaleY(.5);
+    }
+    .switch-info {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .switch-label {
+        font-size: 14px;
+        color: #333;
+        line-height: 20px;
+    }
+    .disabled-tips {
+        display: none;
+        font-size: 12px;
+        color: #999;
+        line-height: 20px;
+        a {
+            margin-left: 5px;
+            color: #3e73ff;
+            text-decoration: none;
+        }
+    }
+    &.disabled {
+        .disabled-tips {
+            display: block;
+        }
+    }
+    .ui-switch {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -15px;
+    }
+}
+
+.pay-cards-panel {
+    .add-card {
+        display: block;
+        position: relative;
+        height: 60px;
+        padding: 0 40px 0 15px;
+        line-height: 60px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #e8e8e8;
+            transform: scaleY(.5);
+            box-shadow: 0 -120px #e8e8e8;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 21px;
+            right: 10px;
+            width: 18px;
+            height: 18px;
+            background-image: url("/style/_asset/image/ui/form/icon-more.png");
+            background-size: 18px auto;
+        }
+        &:active {
+            background-color: #f8f8f8;
+        }
+        .btn-text {
+            &:before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 15px;
+                width: 30px;
+                height: 30px;
+                background-image: url("/style/_asset/image/ui/form/icon-add.png");
+                background-size: 30px auto;
+            }
+        }
+    }
+}
+.pay-card-list {
+    & > li {
+        line-height: 60px;
+        font-size: 0;
+        color: #333;
+        // &.selected {
+        //     background-color: #F4F8FD;
+        // }
+        &.disabled {
+            // color: #999;
+            // .card-logo {
+            //     opacity: .4;
+            // }
+            .card-info {
+                .desc {
+                    display: block;
+                }
+            }
+        }
+    }
+    .card-logo {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: -15px;
+        width: 60px;
+        height: 60px;
+        background-color: #f8f8f8;
+        border: 1px solid #cfcfcf;
+        border-radius: 50%;
+        transform: scale(.5);
+        transform-origin: left center;
+    }
+    .card-info {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 20px;
+        .base {
+            font-size: 14px;
+            @include single-line-text();
+        }
+        .desc {
+            display: none;
+            font-size: 12px;
+            @include single-line-text();
+        }
+    }
+}
+
+
+
+
+// 位置选择
+// .pos-layer-content {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     .pos-tab-title {
+//         height: 50px;
+//         .title-item {
+//             float: left;
+//             margin-right: 100px;
+//             &:last-child {
+//                 margin-right: 
+//             }
+//         }
+//     }
+//     .pos-tab-cont {
+//         position: absolute;
+//         top: 50px;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//     }
+// }
+
+
+
+
+.#{$namespace}form-item {
+    display: block;
+    position: relative;
+    height: 60px;
+    padding: 0 15px 0 110px;
+    & > .#{$namespace}form-item-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 100%;
+        padding: 0 5px 0 15px;
+        line-height: 60px;
+        @include single-line-text();
+    }
+    & > .#{$namespace}form-item-cont {
+        line-height: 60px;
+        @include single-line-text();
+    }
+    &.#{$namespace}select-item {
+        padding: 0 40px 0 110px;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 21px;
+            right: 10px;
+            width: 18px;
+            height: 18px;
+            background-image: url("/style/_asset/image/ui/form/icon-more.png");
+            background-size: 18px auto;
+        }
+        &:active {
+            background-color: #f8f8f8;
+        }
+    }
+    &.#{$namespace}switch-item {
+        & > .#{$namespace}form-item-cont {
+            text-align: right;
+        }
+        &:active {
+            background-color: #f8f8f8;
+        }
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        //z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e8e8e8;
+        transform: scaleY(.5);
+        box-shadow: 0 -120px #e8e8e8;
+    }
+    &:first-child {
+        &:before {
+            box-shadow: none;
+        }
+    }
+}
+
+.#{$namespace}form-item + .#{$namespace}form-item {
+    &:before {
+        box-shadow: none;
+    }
+}
+
+
+
+
+
+
+

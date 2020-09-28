@@ -1,0 +1,146 @@
+extends /_unit/base.pug
+
+append data
+    - var pageTitle = ''
+
+
+append style
+    link(rel="stylesheet",type="text/css",href=`${_static('public/swiper/swiper.min.scss')}`)
+    link(rel="stylesheet",type="text/css",href=`${_static('style/zzs/round-1.scss')}`)
+
+
+block pageContent
+    main.page-content
+        .round.round-1
+            a.rule 活动规则
+            .dateline
+                .dateline-bar.active
+                    .date-left 9.9
+                    .dateline-progress 
+                        .dateline-progress-inner(rate="60")
+                            .rest-day 剩余22天
+                    .date-right 10.6
+                a.record
+            .panel
+                .panel-title 刷满任1周，分8亿积分
+                .panel-content 
+                    .guafen 还没刷满一周，要加油呀！<button>点我瓜分</button>
+                    .broadcast
+                        .broadcast-title 中奖小广播
+                        .broadcast-list.swiper-container(id="broadcast-list")
+                            .swiper-wrapper
+                                .swiper-slide 金发科技发达十六分发觉上当了开发
+                                .swiper-slide 金发科技发达十六分发觉上当了开发
+                                .swiper-slide 金发科技发达十六分发觉上当了开发金发科技发达十六分发觉上当了开发
+
+
+            .panel
+                .panel-title 刷满任1周，分8亿积分
+                .panel-content 
+                    .guafen 已刷满1周，快来瓜分积分呀～ <button>点我瓜分</button>
+            .panel
+                .panel-title 刷满任1周，分8亿积分
+                .panel-content 积分都被抢走了，但还有奖品在等你哟
+
+            .panel
+                .panel-title 刷满任2周，赢心仪奖品
+                .panel-content.st
+                    .st-up
+                        .st-up-left
+                            .st-title 
+                                span 我的战况
+                            .st-subtitle 截至10月03日
+                            .st-detail
+                                .st-cell
+                                    .st-cell-title 达标周数
+                                    .st-cell-value 
+                                        i.cup
+                                        .h-line
+                                        i.cup-gray
+                                .st-cell
+                                    .st-cell-title 消费排名
+                                    .st-cell-value 8888
+                                .st-cell
+                                    .st-cell-title 累积金额
+                                    .st-cell-value ¥8829.98
+                        .st-up-img
+                            img
+                    .st-down
+                        .st-down-title 仅供参考：
+                        .st-down-content 
+                            |刷满两周的用户中，排名第8000累积消费为
+                            br
+                            span.money ¥288888.88
+                            br
+                            .gray 所有用户中，排名第8000累积消费为 <br> ¥8829381.98
+
+            .egg
+                .egg-content 恭喜你，至<span class="egg-date"></span>你的额度提升至<span class="egg-amount"></span>，全力助力活动消费！
+            //- .egg.achieve
+            //-     .egg-content 恭喜你，至11月20日你的额度提升至¥8888888，全力助力活动消费！
+            .notice
+                | 周周刷第二轮于10月7日开启
+                br
+                span  更多奖品数量，第一轮未获奖用户消费可累积到下一轮哦
+
+        //- 彩蛋弹层
+        .popup-template(id="popup-template-egg")
+            //- img(src=`${_static('data/image/zzs/egg-open.png')}`)
+            .egg-animation 
+            .bold  呀！有惊喜！
+            p 至<span class="egg-date">11月20日</span>你的额度提升至<span class="egg-amount"> ¥8888888</span><br>全力助力活动消费！
+            button.popup-btn.success(data-action="closeLayer") 知道了
+
+        //- 积分抽奖动画弹层
+        .popup-template(id="popup-template-point-animation")
+            //- img(src=`${_static('data/image/zzs/jifen-load.png')}`)
+            .point-animation
+
+        //- 积分抽奖成功弹层
+        .popup-template(id="popup-template-point-success")
+            img(src=`${_static('data/image/zzs/jifen-success.png')}`)
+            .bold 恭喜您抽中了<span>7000</span>积分！
+            p 已存入”我的-积分”，<a>查看</a>
+            button.popup-btn.success(data-action="closeLayer") 完成
+
+        //- 积分抽奖失败弹层
+        .popup-template(id="popup-template-point-fail")
+            img(src=`${_static('data/image/zzs/jifen-fail.png')}`)
+            p 哎呀晚了一步 积分被抢光了
+            button.popup-btn.fail(data-action="closeLayer") 关闭
+
+
+        script(id="layer-template-record",type="text/template").
+            <div class="popup-record">
+                <div class="popup-record-title">此明细为满168元的消费记录</div>
+                {{#data}}
+                    <div class="popup-record-item">
+                        <div class="week">{{date}}</div>
+                        <ul>
+                            {{#detail}}
+                                <li>
+                                    {{transDate}}<span>交易金额</span>￥{{transAmt}}
+                                </li> 
+                            {{/detail}}
+                            {{^detail}}
+                                <li class="empty-record">无消费记录</li>
+                            {{/detail}}
+                                         
+                        </ul>
+                    </div>
+                {{/data}}
+            </div>
+        script(id="layer-template-card",type="text/template").
+            <div class="cards">
+                {{#cards}}
+                    {{#valid}}<div class="card">{{/valid}}
+                    {{^valid}}<div class="card disabled">{{/valid}}
+                        <div class="logo"><img src="{{logoUrl}}"></div>
+                        <div class="name">{{name}}</div>
+                        <div class="check"></div>
+                    </div>
+                {{/cards}}
+            </div>
+
+append script
+    script(src=`${_static('script/entry/zzs/round-1.js')}`)
